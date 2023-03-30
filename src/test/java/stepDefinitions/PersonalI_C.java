@@ -4,26 +4,27 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.PersonalI_Page_Factory_C;
 import utils.SeleniumUtils;
 
 public class PersonalI_C {
     @Given("userName1")
-    public void username() {
+    public void perusername() {
 
         SeleniumUtils.waitFor(2);
-        PersonalI_C personalI_c = new PersonalI_C();
-        personalI_c.username();
+        PersonalI_Page_Factory_C personalI_c = new PersonalI_Page_Factory_C();
+        personalI_c.userName1();
 
     }
 
     @When("password1")
     public void password() {
-        new PersonalI_C().password();
+        new PersonalI_Page_Factory_C().passWord();
     }
 
 
-    @And("login1")
-    public void login() {
-        new PersonalI_C().login();
+    @When("login1")
+    public void signUp() {
+        new PersonalI_Page_Factory_C().loGin();
     }
 }

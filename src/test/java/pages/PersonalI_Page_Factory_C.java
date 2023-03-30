@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 
-public class PersonalI_C {
+public class PersonalI_Page_Factory_C {
 
-    public PersonalI_C(){
+    public PersonalI_Page_Factory_C(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
