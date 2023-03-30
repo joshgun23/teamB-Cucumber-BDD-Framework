@@ -1,13 +1,14 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.PersonalI_Page_Factory_C;
+import utils.Driver;
 import utils.SeleniumUtils;
 
-public class PersonalI_C {
+public class PersonalI_StepDefinisions_C {
     @Given("userName1")
     public void perusername() {
 
@@ -23,8 +24,9 @@ public class PersonalI_C {
     }
 
 
-    @When("login1")
+    @Then("login1")
     public void signUp() {
         new PersonalI_Page_Factory_C().loGin();
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Duobank Mortgage Application");
     }
 }
