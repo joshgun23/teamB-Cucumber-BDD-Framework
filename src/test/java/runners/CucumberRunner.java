@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-       // tags = "@currentTest", // runs scenarios with the given tag only
+       tags = "@currentTest", // runs scenarios with the given tag only
         features = "src/test/resources/user_login_Z.feature", // the path where all feature files are located
       glue = "stepDefinitions", // path where all step definition classes are located
         plugin = {
