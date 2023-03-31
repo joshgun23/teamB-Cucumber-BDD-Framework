@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "sighn_in",
-        features = "src/test/resources/user_login_Z.feature",
+        tags = "@sign",
+        features = "src/test/resources",
         glue = "stepDefinitions",
         plugin = {
                 "pretty",

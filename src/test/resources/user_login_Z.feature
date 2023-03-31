@@ -1,6 +1,7 @@
+@sign
 Feature: Sign in to mortgage account
 
-  @sign-in
+
 
   Scenario 1 User signs in with valid credentials
     Given the user is on the sign in page

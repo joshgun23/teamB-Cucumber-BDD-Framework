@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
+import utils.SeleniumUtils;
 
 public class PersonalI_Page_Factory_C {
 
@@ -18,6 +19,7 @@ public class PersonalI_Page_Factory_C {
     public void userName1(){
         userName.click();
         userName.sendKeys("Coshgun.ismayilov@lenta.ru");
+
     }
 
     @FindBy(name = "password")
