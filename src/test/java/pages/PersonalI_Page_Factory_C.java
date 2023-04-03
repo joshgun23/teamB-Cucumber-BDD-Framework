@@ -1,5 +1,3 @@
-package pages;
-
 import com.github.javafaker.Faker;
 import io.cucumber.java.zh_cn.那么;
 import org.openqa.selenium.By;
