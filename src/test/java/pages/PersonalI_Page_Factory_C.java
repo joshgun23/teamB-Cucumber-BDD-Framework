@@ -258,4 +258,93 @@ public class PersonalI_Page_Factory_C {
     public void setPerPtivacyCheckBoxButton(){
         perPtivacyCheckBoxButton.click();
     }
+
+    //Negativ Test
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    private WebElement negativpersonalName;
+
+    public void setNegativpersonalName(){
+        negativpersonalName.sendKeys("12345454487");
+    }
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    private WebElement negativ_2_personalName;
+
+    public void setNegativ_2_personalName(){
+        negativ_2_personalName.sendKeys("Josh12345");
+    }
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    private WebElement negativ_3_personalName;
+
+    public void setNegativ_3_personalName(){
+        negativ_3_personalName.sendKeys("J                                k");
+    }
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    private WebElement negativ_4_personalName;
+
+    public void setNegativ_4_personalName(){
+        negativ_4_personalName.sendKeys("/*/*/*/**//*/*/*/*//*/*/*/**/*/*/*//");
+    }
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    private WebElement personal_1_MiddleName;
+
+    public void setPersonal_1_MiddleName(){
+        personal_1_MiddleName.sendKeys("12345454847454");
+    }
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    private WebElement personal_2_MiddleName;
+
+    public void setPersonal_2_MiddleName(){
+        personal_2_MiddleName.sendKeys("fsgdsgfs54847454");
+    }
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    private WebElement personal_3_MiddleName;
+
+    public void setPersonal_3_MiddleName(){
+        personal_3_MiddleName.sendKeys("f                           l");
+    }
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    private WebElement personal_4_MiddleName;
+
+    public void setPersonal_4_MiddleName(){
+        personal_4_MiddleName.sendKeys("@###$$%%^^&&&^%$$&&^%$##%%@%$#@%$#@#");
+    }
+
+    @FindBy(xpath = "//input[@id='b_lastName']")
+    private WebElement neqativpersonal_1_LastName;
+
+    public void setPersonal_1_LastName(){
+        neqativpersonal_1_LastName.sendKeys("OnurKevin12145454544");
+    }
+    @FindBy(xpath = "//input[@id='b_lastName']")
+    private WebElement neqativpersonal_2_LastName;
+
+    public void setpersonal_2_LastName(){
+        neqativpersonal_2_LastName.sendKeys("f                                     l");
+    }
+    @FindBy(xpath = "//input[@id='b_lastName']")
+    private WebElement neqativpersonal_3_LastName;
+
+    public void setpersonal_3_LastName(){
+        neqativpersonal_3_LastName.sendKeys("^&%^&$^&%^&*&*^*^%%&^^");
+    }
+    //Parametr
+    @FindBy(xpath = "//input[@id='b_firstName']")
+    private WebElement personalparametrName;
+
+    public void setPersonalparametrName(String name){
+        personalparametrName.sendKeys(name);
+    }
+
+    @FindBy(xpath = "//input[@id='b_middleName']")
+    private WebElement personalParametrMiddleName;
+
+    public void setPersonalParametrMiddleName(String nameMiddle){
+        personalParametrMiddleName.sendKeys(nameMiddle);
+    }
+    @FindBy(xpath = "//input[@id='b_lastName']")
+    private WebElement personalParametrLastName;
+
+    public void setPersonalParametrLastName(String nameLast){
+        personalParametrLastName.sendKeys(nameLast);
+    }
 }
