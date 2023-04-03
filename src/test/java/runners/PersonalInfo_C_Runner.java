@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
                 "pretty", // adds more detailed output log in the cmd console
                 "html:target/basic-report/report.html"  // to generate a basic built-in report
 
-        }
+        }//,dryRun = true
 
 )
 public class PersonalInfo_C_Runner {

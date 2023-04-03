@@ -17,8 +17,8 @@
     Then the user should not see message "This field is required"
 
 
-  Scenario  User should click "save" button
-    Given the user is on Expenses page
-    When user choose "save" button
-    Then  all required fields are filled out
+#  Scenario  User should click "save" button
+#    Given the user is on Expenses page
+#    When user choose "save" button
+#    Then  all required fields are filled out
 

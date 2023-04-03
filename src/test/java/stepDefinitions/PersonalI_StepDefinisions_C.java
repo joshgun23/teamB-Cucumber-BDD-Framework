@@ -1,9 +1,6 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.PersonalI_Page_Factory_C;
 import utils.Driver;
@@ -20,11 +17,11 @@ public class PersonalI_StepDefinisions_C {
         personalI_c.loGin();
         Assert.assertEquals(Driver.getDriver().getTitle(),"Duobank Mortgage Application");
         new PersonalI_Page_Factory_C().mortageClick();
-      new PersonalI_Page_Factory_C().preapruNo();
-      new PersonalI_Page_Factory_C().estimatePri();
-      new PersonalI_Page_Factory_C().setEstimateDownP();
-      new PersonalI_Page_Factory_C().setPreaprovalNext();
-     Assert.assertTrue("personal information",Driver.getDriver().getPageSource().contains("Personal Information"));
+        new PersonalI_Page_Factory_C().preapruNo();
+        new PersonalI_Page_Factory_C().estimatePri();
+        new PersonalI_Page_Factory_C().setEstimateDownP();
+        new PersonalI_Page_Factory_C().setPreaprovalNext();
+        Assert.assertTrue("personal information",Driver.getDriver().getPageSource().contains("Personal Information"));
 
     }
 
@@ -50,3 +47,4 @@ public class PersonalI_StepDefinisions_C {
 //     Assert.assertTrue("personal information",Driver.getDriver().getPageSource().contains("Personal Information"));
 //    }
 }
+

@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.HomePage;
+
 
 import utils.Driver;
 
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class DashboardSectionDefs_E extends HomePage {
+public class DashboardSectionDefs_E  {
 
     public class DashboardSteps {
         @Given("^I am on the dashboard page$")
@@ -73,7 +73,7 @@ public class DashboardSectionDefs_E extends HomePage {
             assertTrue( logOutLink.isDisplayed() );
         }
 
-        @And("^I should be able to click on the "Logout" link to log out of the system$")
+        @And("^I should be able to click on the \"Logout\" link to log out of the system$")
         public void clickOnLogoutLink() {
             WebElement logOutLink = Driver.getDriver().findElement( By.xpath( "//div[@class='dropdown-item']//span[contains(text(),'Logout')]" ) );
             logOutLink.click();
