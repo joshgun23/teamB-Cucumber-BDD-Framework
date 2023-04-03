@@ -6,12 +6,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-       tags = "@current",
+       tags = "@coshgun",
         features = "src/test/resources",
         glue = "stepDefinitions",
+        stepNotifications = true,//give us all step detailed result
+        //dryRun = true,//same the headless code running but UI not opening
         plugin = {
                 "pretty", // adds more detailed output log in the cmd console
                 "html:target/basic-report/report.html"  // to generate a basic built-in report
+
         }
 
 )

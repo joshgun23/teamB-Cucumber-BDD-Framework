@@ -22,7 +22,7 @@ public class Hooks {
     }
 
 
-    @After () // after each scenario
+    @After  // after each scenario
     public void tearDownScenario(Scenario scenario){
         if(scenario.isFailed()){
             scenario.attach(((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES), "image/png", "screenshot");
