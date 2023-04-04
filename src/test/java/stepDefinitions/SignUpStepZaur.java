@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import utils.Driver;
 
-public class SignUpStepZaur {
+public class \SignUpStepZaur {
 
 
     @When("I am on the Sign Up page")

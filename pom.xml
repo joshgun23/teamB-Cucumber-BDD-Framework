@@ -57,7 +57,7 @@
             <version>2.11.0</version>
         </dependency>
 
-        <!--    to remove the error when running tests thru command line-->
+        <!--    to remove the error when running tests through command line-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
