@@ -6,10 +6,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.HomePage;
+import pages.HomePageLinkZaur;
+import pages.HomePageLinkZaur;
 import utils.Driver;
 
-public class \SignUpStepZaur {
+public class SignUpStepZaur {
 
 
     @When("I am on the Sign Up page")
@@ -65,7 +66,7 @@ public class \SignUpStepZaur {
     @Given("an existing user with Email Address {string}")
     public void an_existing_user_with_email_address(String string) {
         Driver.getDriver().get("http://qa-duobank.us-east-2.elasticbeanstalk.com/index.php");
-        HomePage homepg = new HomePage();
+        HomePageLinkZaur homepg = new HomePageLinkZaur();
         homepg.clickOnSignUpLink();
 
 

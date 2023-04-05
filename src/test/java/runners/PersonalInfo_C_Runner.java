@@ -19,6 +19,4 @@ import org.junit.runner.RunWith;
 )
 public class PersonalInfo_C_Runner {
 
-
-
 }

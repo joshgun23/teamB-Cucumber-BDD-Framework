@@ -24,7 +24,6 @@ Feature: As a user, I want to use the Preapproval Details page of my bank's mort
     Scenario: Fill out the Mortgage Application Preapproval Details page and check calculated loan amount
       When The user fills out necessary fields on the preapproval details page
       Then The user can check calculated loan amount
-
     Scenario: Fill out the Mortgage Application Preapproval Details page using invalid credentials for the realtor information field
       When The user fills out all the necesarry fields on the preapproval details page using "!@#$%^&*()" as a realtor information
       Then The user should not be able to move on to the personal information page by clicking on Next button
