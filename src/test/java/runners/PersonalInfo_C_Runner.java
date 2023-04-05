@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-       tags = "@coshgun",
+       tags = "@smoke",//"@smoke and @negativ" "@smoke or @positive","@smoke or @regression","@regression","@test12"
         features = "src/test/resources",
         glue = "stepDefinitions",
         stepNotifications = true,//give us all step detailed result
@@ -14,8 +14,7 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty", // adds more detailed output log in the cmd console
                 "html:target/basic-report/report.html"  // to generate a basic built-in report
-
-        }//,dryRun = true
+        }
 
 )
 public class PersonalInfo_C_Runner {

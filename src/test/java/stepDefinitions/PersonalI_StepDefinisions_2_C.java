@@ -111,12 +111,246 @@ new PersonalI_Page_Factory_C().setCoFirstName();
 
     }
 
+    @Then("the user enters the personal information first name incoreccet only number, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationFirstNameIncoreccetLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setNegativpersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information first name incoreccet number and letters, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationFirstNameIncoreccetNumberAndLettersLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setNegativ_2_personalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
 
 
+    @Then("the user enters the personal information first name incoreccet letters with space, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationFirstNameIncoreccetLettersWithSpaceLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setNegativ_3_personalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
 
-    ////input[starts-with(@name, 'name')]
-//    @Then("all required fields are filled out")
-//    public void allRequiredFieldsAreFilledOut() {
-//    }
+    @Then("the user enters the personal information first name letters with charcters more, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationFirstNameLettersWithCharctersMoreLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setNegativ_4_personalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Middle name incoreccet only number, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationMiddleNameIncoreccetOnlyNumberLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonal_1_MiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Middle name incoreccet number and letters, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationMiddleNameIncoreccetNumberAndLettersLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonal_2_MiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Middle name incoreccet letters with space, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationMiddleNameIncoreccetLettersWithSpaceLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonal_3_MiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Middle name letters with charcters more, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationMiddleNameLettersWithCharctersMoreLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonal_4_MiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Last name incoreccet number and letters, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationLastNameIncoreccetNumberAndLettersLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonal_1_LastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Last name incoreccet letters with space, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationLastNameIncoreccetLettersWithSpaceLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setpersonal_2_LastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information Last name letters with charcters more, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationLastNameLettersWithCharctersMoreLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setpersonal_3_LastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    //Parametr
+    @Then("the user enters the personal information neqativ first name {string}")
+    public void theUserEntersThePersonalInformationFirstName(String name) {
+    PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+    personalI_page_factory_c.setPersonalparametrName(name);
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+
+    }
+
+
+    @Then("the user enters the personal information neqativ Middle name {string}")
+    public void theUserEntersThePersonalInformationNeqativMiddleName(String nameMiddle) {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalParametrMiddleName(nameMiddle);
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("the user enters the personal information neqativ Last name {string}")
+    public void theUserEntersThePersonalInformationNeqativLastName(String nameLast) {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalParametrLastName(nameLast);
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
 }
 
