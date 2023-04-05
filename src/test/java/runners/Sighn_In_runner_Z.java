@@ -14,5 +14,4 @@ import org.junit.runner.RunWith;
                 "html:target/basic-report/report.html"
         }
 )
-public class Sighn_In_runner_Z {
-}
+public class Sighn_In_runner_Z {}
