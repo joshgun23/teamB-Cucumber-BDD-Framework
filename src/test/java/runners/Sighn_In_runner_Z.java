@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@sign",
+        tags = "@Ziyoda",
         features = "src/test/resources",
         glue = "stepDefinitions",
         plugin = {
@@ -14,4 +14,5 @@ import org.junit.runner.RunWith;
                 "html:target/basic-report/report.html"
         }
 )
-public class Sighn_In_runner_Z {}
+public class Sighn_In_runner_Z {
+}

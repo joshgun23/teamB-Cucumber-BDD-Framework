@@ -27,19 +27,19 @@ public class Sign_in_factory_Z {
     @FindBy(xpath = "//a[@class='dropdown-toggle']")
     private WebElement dashboard;
 
-    @FindBy(name = "email")
+    @FindBy(id = "email")
     private WebElement invalidEmail;
 
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     private WebElement invalidPassword;
 
     @FindBy(xpath = "//*[@id=\"auth-login\"]/div/div/div/div[1]/div/div[1]/text()")
-    private WebElement errorMessage;
+    public WebElement errorMessage;
 
-    @FindBy(name = "email")
+    @FindBy(id = "email")
     private WebElement noUserName;
 
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     private WebElement noPassword;
 
 
@@ -51,6 +51,9 @@ public class Sign_in_factory_Z {
 
     @FindBy(id = "hideLogin")
     public WebElement signUpLink;
+
+    // Web App does not have a Forgot Password link
+    //Make sure to add it to the Web App
 
     public void username(String email) {
         eMail.sendKeys(email);
@@ -71,7 +74,7 @@ public class Sign_in_factory_Z {
     }
 
     public void SignIn() {
-        eMail.sendKeys(ConfigReader.getProperty("homepage"));
+        eMail.sendKeys(ConfigReader.getProperty("username"));
         password.sendKeys(ConfigReader.getProperty("password"));
         login.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -89,9 +92,11 @@ public class Sign_in_factory_Z {
     public void invalidPassword() {
         Faker faker = new Faker();
         invalidPassword.sendKeys(faker.internet().password());
-        eMail.sendKeys(ConfigReader.getProperty("homepage"));
-        login.click();
+        eMail.sendKeys(ConfigReader.getProperty("username"));
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
+        login.click();
+
     }
 
     public void noUserName() {
@@ -102,7 +107,7 @@ public class Sign_in_factory_Z {
     }
 
     public void noPassword() {
-        eMail.sendKeys(ConfigReader.getProperty("homepage"));
+        eMail.sendKeys(ConfigReader.getProperty("username"));
         noPassword.sendKeys("");
         login.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -113,6 +118,34 @@ public class Sign_in_factory_Z {
     }
 
 
-   public void SighnUpLink() {
+    public void welcomeMessage() {
+        Assert.assertEquals("Welcome to Duobank", errorMessage.getText());
+    }
+
+    public void blankCredentials() {
+        noUserName.sendKeys("");
+        noPassword.sendKeys("");
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        login.click();
+
+    }
+
+
+    public void invalidUsernamePassword() {
+        invalidEmail.sendKeys("Coshgun.Ismailov@gmail.com");
+        invalidPassword.sendKeys("123456");
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        login.click();
+    }
+
+    public void signUpLink() {
         signUpLink.click();
-    }}
+        Assert.assertEquals("https://duobank-dev.herokuapp.com/signup", Driver.getDriver().getCurrentUrl());
+    }
+
+    public void forgotPasswordLink() {
+        //forgotPasswordLink.click();
+        //Assert.assertEquals("https://duobank-dev.herokuapp.com/forgot-password", Driver.getDriver().getCurrentUrl());
+    }
+}
+
