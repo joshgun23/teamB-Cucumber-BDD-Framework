@@ -1,22 +1,24 @@
+
 Feature: Dashboard page functionality
 
-  Scenario 1: Verify the dashboard page displays bank logo, links, and user information
-    Given User navigates to the dashboard page
-    Then Bank logo should be displayed in the top left corner of the page
-    And Dashboard page should include "Mortgage Application" and "Application List" links
+  Scenario: 1 User signs in with valid credentials
+    Given the user is on the sign in page
+    When the user enters a valid email address and password
+    And clicks on the sign in button
+    Then the user should be redirected to the mortgage account dashboard
 
-  Scenario 2: "Mortgage Application" link
-    When User clicks on "Mortgage Application" link
-    Then User should be taken to the mortgage application page
-    And User can apply for a new mortgage
-  Scenario 3: "Mortgage Application" link
-    When User clicks on "Application List" link
-    Then User should be taken to the previous mortgage applications page
-    And User can view a list of their previous mortgage applications
-    And User's account information, including their first and last name and profile picture, should be displayed in the top right corner of the page
-  Scenario 4: User's account information
-    When User clicks on their name or picture
-    Then User should see a dropdown menu
-    And Dropdown menu should include a "Logout" link
-    When User clicks on "Logout" link
-    Then User should be logged out of the system
+  Scenario: 2 Verify the dashboard page functionality
+    Given User on the dashboard page
+    Then Bank logo should be displayed in the top left corner of the page
+    And User should see the "Mortgage Application" and "Application List" links
+    When User click on the "Mortgage Application" link
+    Then User should be taken to a new page where user can apply for a new mortgage
+    When User click on the "Application List" link
+
+    Scenario: 3 Account informatiom
+      Given The user's account information
+    And User should see my account information in the top right corner
+    When User click on my name or profile picture
+    Then User should see a dropdown menu with a "Logout" link
+    And User should be able to click on the "Logout" link to log out of the system
+
