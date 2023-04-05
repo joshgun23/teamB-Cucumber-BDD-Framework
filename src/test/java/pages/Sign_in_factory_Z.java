@@ -25,7 +25,7 @@ public class Sign_in_factory_Z {
     private WebElement password;
 
     public void passWord() {
-        password.sendKeys(ConfigReader.getProperty("password"));
+        password.sendKeys(ConfigReader.getProperty("Password"));
     }
 
     @FindBy(name = "login")

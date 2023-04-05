@@ -14,7 +14,7 @@ import java.util.List;
 public class DashboardSection_E {
 
 
-    @FindBy(xpath = "//a[@class='dropdown-toggle']")
+    @FindBy(xpath = "//a[@class='menu-title']")
     private WebElement dashboard;
 
     public void dashboard() {

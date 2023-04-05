@@ -79,7 +79,7 @@
                     <version>3.0.0</version>
                     <configuration>
                         <includes>
-                            <include>PersonalInfo_C_Runner.java</include>
+                            <include>DashboardSectionDefs_E.java</include>
                         </includes>
                     </configuration>
 
