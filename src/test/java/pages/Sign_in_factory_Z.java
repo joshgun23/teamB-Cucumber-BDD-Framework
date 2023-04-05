@@ -8,108 +8,144 @@ import org.openqa.selenium.support.PageFactory;
 import utils.ConfigReader;
 import utils.Driver;
 
+import java.time.Duration;
+
 public class Sign_in_factory_Z {
     public Sign_in_factory_Z() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(name = "email")
+    @FindBy(id = "email")
     private WebElement eMail;
 
-    public void userName() {
-        eMail.click();
-        eMail.sendKeys(ConfigReader.getProperty("username"));
-    }
-
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     private WebElement password;
 
-    public void passWord() {
-        password.sendKeys(ConfigReader.getProperty("password"));
-    }
-
-    @FindBy(name = "login")
-    private WebElement login;
-
-    public void loGin() {
-        login.click();
-    }
+    @FindBy(id = "signin")
+    public WebElement login;
 
     @FindBy(xpath = "//a[@class='dropdown-toggle']")
     private WebElement dashboard;
 
-    public void dashboard() {
-        Assert.assertTrue(dashboard.isDisplayed());
-
-
-    }
-
-    @FindBy(name = "email")
+    @FindBy(id = "email")
     private WebElement invalidEmail;
 
-    public void invaliUserName() {
-        Faker faker = new Faker();
-        String email = faker.name().username() + "@gmail.com";
-        invalidEmail.sendKeys(email);
-
-
-    }
-
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     private WebElement invalidPassword;
 
-    public void invalidPassword() {
-        Faker faker = new Faker();
-        String password = faker.name().username();
-        invalidPassword.sendKeys(password);
-    }
-
     @FindBy(xpath = "//*[@id=\"auth-login\"]/div/div/div/div[1]/div/div[1]/text()")
-    private WebElement errorMessage;
+    public WebElement errorMessage;
 
-    public void errorMessage() {
-        Assert.assertTrue(errorMessage.isDisplayed());
-    }
-
-    @FindBy(name = "email")
+    @FindBy(id = "email")
     private WebElement noUserName;
 
-    public void noUserName() {
-        noUserName.sendKeys("");
-
-    }
-    @FindBy(name = "password")
+    @FindBy(id = "password")
     private WebElement noPassword;
 
-    public void noPassword(){
-        noPassword.sendKeys("");
-    }
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-block btn-lg loginbtn']")
     private WebElement login2;
-    public void disabledButton() {
-        Assert.assertTrue(login.isEnabled());
 
-    }
     @FindBy(xpath = "//button[@class='btn btn-primary btn-block btn-lg loginbtn']")
     private WebElement login3;
-    public void missingField() {
-        Assert.assertTrue(login.isEnabled());
+
+    @FindBy(id = "hideLogin")
+    public WebElement signUpLink;
+
+    // Web App does not have a Forgot Password link
+    //Make sure to add it to the Web App
+
+    public void username(String email) {
+        eMail.sendKeys(email);
+
+
     }
 
-    @FindBy (id = "hideLogin")
-    private WebElement signUpLink;
+    public void password(String pass) {
+        password.sendKeys(pass);
+    }
+
+    public WebElement geteMail() {
+        return eMail;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public void SignIn() {
+        eMail.sendKeys(ConfigReader.getProperty("username"));
+        password.sendKeys(ConfigReader.getProperty("password"));
+        login.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+    }
+
+    public void invalidEmail() {
+        Faker faker = new Faker();
+        invalidEmail.sendKeys(faker.internet().emailAddress());
+        password.sendKeys(ConfigReader.getProperty("password"));
+        login.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
+    }
+
+    public void invalidPassword() {
+        Faker faker = new Faker();
+        invalidPassword.sendKeys(faker.internet().password());
+        eMail.sendKeys(ConfigReader.getProperty("username"));
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
+        login.click();
+
+    }
+
+    public void noUserName() {
+        noUserName.sendKeys("");
+        password.sendKeys(ConfigReader.getProperty("password"));
+        login.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+    }
+
+    public void noPassword() {
+        eMail.sendKeys(ConfigReader.getProperty("username"));
+        noPassword.sendKeys("");
+        login.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+    }
+
+    public void errorMessage() {
+        Assert.assertEquals("Invalid email or password", errorMessage.getText());
+    }
+
+
+    public void welcomeMessage() {
+        Assert.assertEquals("Welcome to Duobank", errorMessage.getText());
+    }
+
+    public void blankCredentials() {
+        noUserName.sendKeys("");
+        noPassword.sendKeys("");
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        login.click();
+
+    }
+
+
+    public void invalidUsernamePassword() {
+        invalidEmail.sendKeys("Coshgun.Ismailov@gmail.com");
+        invalidPassword.sendKeys("123456");
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        login.click();
+    }
 
     public void signUpLink() {
         signUpLink.click();
-
+        Assert.assertEquals("https://duobank-dev.herokuapp.com/signup", Driver.getDriver().getCurrentUrl());
     }
-
-    public void signUpPage() {
-        Assert.assertTrue(signUpLink.isDisplayed());
-    }
-
 
     public void forgotPasswordLink() {
+        //forgotPasswordLink.click();
+        //Assert.assertEquals("https://duobank-dev.herokuapp.com/forgot-password", Driver.getDriver().getCurrentUrl());
     }
 }
+
