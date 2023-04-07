@@ -16,10 +16,12 @@ Feature: As a potential homebuyer
     Then an additional section for personal information  information is displayed
     Then the user enters the personal information first name, last name, email, date of birth, SSN, marital status, cell phone, and home phone
     Then all required fields are filled out
+
   @smoke
   Scenario: User reads and accepts Privacy Policy
     When the user reads the Privacy Policy and clicks the checkbox to accept the terms
     Then the checkbox is checked and the user can move forward to the next page of the application
+
   @smoke
   Scenario: User fills out co-borrower's information
     When the user selects for the co-borrower question
