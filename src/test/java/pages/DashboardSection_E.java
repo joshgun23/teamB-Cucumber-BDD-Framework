@@ -39,6 +39,35 @@ public class DashboardSection_E {
     @FindBy(xpath = "//span[@class='user-name']//span")
     public List<WebElement> userNam ; // check name?
 
+    @FindBy(xpath = "////span[@data-i18n='eCommerce']")
+    public List<WebElement> MortgageApplicationLink  ; //
+    @FindBy(xpath = "//span[@class='Summary']//span")
+    public List<WebElement>  Summary ; //
+
+    @FindBy(xpath = "//a[href[@class='btn btn-success buttonEdit']]")
+    public List<WebElement>  editButton ; //
+
+    @FindBy(xpath = "//a[@href='#finish']")
+    public List<WebElement>  submitButton ; //
+
+    @FindBy(id="steps-uid-0-t-0")
+    public WebElement preapprovalDetailsE;
+
+    @FindBy(xpath = "//label[@for='realtor2']")
+    public WebElement noRealtor;
+
+    @FindBy(xpath = "//label[.='No']")
+    public WebElement loanOfficerNo;
+
+    @FindBy(id="estimatedprice")
+    public WebElement estimatedPriceFeild;
+
+    @FindBy(id="downpayment")
+    public WebElement downPayment;
+
+
+
+
 }
 
 

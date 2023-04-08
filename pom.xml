@@ -65,7 +65,11 @@
             <optional>true</optional>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
+        </dependency>
 
 
     </dependencies>
@@ -79,7 +83,7 @@
                     <version>3.0.0</version>
                     <configuration>
                         <includes>
-                            <include>DashboardSectionDefs_E.java</include>
+                            <include>PersonalInfo_C_Runner.java</include>
                         </includes>
                     </configuration>
 

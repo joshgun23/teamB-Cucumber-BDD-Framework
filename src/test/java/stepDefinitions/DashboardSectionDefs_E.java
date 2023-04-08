@@ -8,36 +8,30 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.DashboardSection_E;
 import pages.Sign_in_factory_E;
+import utils.ConfigReader;
 import utils.Driver;
 import utils.SeleniumUtils;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class DashboardSectionDefs_E  {
 
-          @Given("the user is on the sign in page")
-        public void givenTheUserIsOnTheHomePage() {
-            System.out.println("The user is on the sign in page");
+          @Given("the user is on the sign in home page")
+        public void The_User_Is_On_The_Home_Page() {
+            System.out.println("the user is on the sign in home page");
             SeleniumUtils.waitFor(2);
-            Sign_in_factory_E factory_e = new Sign_in_factory_E();
-
+              Driver.getDriver().get( ConfigReader.getProperty("homepage"));
         }
-
-        @When("the user enters a valid email address and password")
-        public void whenTheUserEntersAValidEmailAddressAndPassword() {
-            System.out.println("The user enters a valid email address and password");
+        @When("The user enters a email address and password")
+        public void the_user_enters_email_address_and_password() {
+            System.out.println("The user enters a email address and password");
             Sign_in_factory_E factory_e = new Sign_in_factory_E();
             SeleniumUtils.waitFor(2);
             factory_e.userName();
-            factory_e.passWord();
-
-        }
+            factory_e.setPassword();
+          }
 
         @And("clicks on the sign in button")
-        public void clicksOnTheSignInButton() {
+        public void clicks_on_the_sign_in_button() {
             System.out.println("The user should be able to sign in");
             SeleniumUtils.waitFor(2);
             Sign_in_factory_E factory_e = new Sign_in_factory_E();
@@ -45,20 +39,20 @@ public class DashboardSectionDefs_E  {
 
         }
         @Then("the user see mortgage account dashboard")
-        public void The_User_See_Mortgage_Account_Dashboard() {
+        public void the_user_see_mortgage_account_dashboard() {
             System.out.println( "The user see mortgage account dashboard" );
             Sign_in_factory_E factory_e = new Sign_in_factory_E();
             SeleniumUtils.waitFor( 2 );
             factory_e.dashboard1();
 
         }
-//
-//        @Given("User on the dashboard page")
-//         public void thenTheUserShouldBeRedirectedToTheMortgageAccountDashboard() {
-//         System.out.println( "The user should be redirected to the mortgage account dashboard" );
-//         Sign_in_factory_E factory_e = new Sign_in_factory_E();
-//         factory_e.dashboard();
-   // }
+
+      @Given("User on the dashboard page")
+        public void User_on_the_dashboard() {
+        System.out.println( "User on the dashboard page" );
+        Sign_in_factory_E factory_e = new Sign_in_factory_E();
+       factory_e.dashboard1();
+   }
          @When("Bank logo should be displayed in the top left corner of the page")
         public void Bank_logo_should_be_displayed_in_the_top_left_corner_of_the_page(){
 
@@ -68,15 +62,15 @@ public class DashboardSectionDefs_E  {
           assertTrue("Bank logo is not displayed!", dashboardPage.brandLogo.isEmpty());
 
     }
-
-        @And(value = "User should see the Mortgage Application and Application List links")  //matches any string of characters between two double quotes
-        public void user_should_see_the_and_links(String link1, String link2) {
-            System.out.println("User should see the Mortgage Application and Application List links");
-            List<WebElement> links = Driver.getDriver().findElements( By.xpath( "//div[@class='menu-title']//span" ) );
-            List<String> expectedLinks = Arrays.asList( link1, link2 );
-            List<String> actualLinks = links.stream().map( WebElement::getText ).collect( Collectors.toList() );
-            assertEquals( expectedLinks, actualLinks );
-        }
+//
+//        @And(value = "User should see the Mortgage Application and Application List links")  //matches any string of characters between two double quotes
+//        public void user_should_see_the_and_links(String link1, String link2) {
+//            System.out.println("User should see the Mortgage Application and Application List links");
+//            List<WebElement> links = Driver.getDriver().findElements( By.xpath( "//div[@class='menu-title']//span" ) );
+//            List<String> expectedLinks = Arrays.asList( link1, link2 );
+//            List<String> actualLinks = links.stream().map( WebElement::getText ).collect( Collectors.toList() );
+//            assertEquals( expectedLinks, actualLinks );
+//        }
 
         @When("User click on the \"Mortgage Application\" link")  //matches any string of characters between two double quotes
         public void user_click_on_the_link(String link) {
