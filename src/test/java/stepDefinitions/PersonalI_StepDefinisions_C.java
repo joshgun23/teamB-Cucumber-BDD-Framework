@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.PersonalI_Page_Factory_C;
 import utils.Driver;
@@ -24,6 +25,7 @@ public class PersonalI_StepDefinisions_C {
         Assert.assertTrue("personal information",Driver.getDriver().getPageSource().contains("Personal Information"));
 
     }
+
 
 //    @When("password1")
 //    public void password() {
