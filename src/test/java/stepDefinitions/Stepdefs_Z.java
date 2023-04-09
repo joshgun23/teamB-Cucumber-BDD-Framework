@@ -12,9 +12,11 @@ import utils.Driver;
 import utils.SeleniumUtils;
 
 public class Stepdefs_Z {
+
     @Given("the user is on the sign-in page")
     public void theUserIsOnTheSignInPage() {
         Driver.getDriver().get(ConfigReader.getProperty("homepage"));
+        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/", Driver.getDriver().getCurrentUrl());
 
 
     }
@@ -23,6 +25,7 @@ public class Stepdefs_Z {
     public void theUserEntersValidCredentials() {
         Sign_in_factory_Z signIn = new Sign_in_factory_Z();
         signIn.SignIn();
+        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());
 
 
     }
@@ -31,12 +34,14 @@ public class Stepdefs_Z {
     public void theUserShouldBeAbleToSignInSuccessfully() {
         Sign_in_factory_Z signIn = new Sign_in_factory_Z();
         signIn.SignIn();
+        Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());
     }
 
     @And("the user should be able to see the welcome message {string}")
     public void theUserShouldBeAbleToSeeTheWelcomeMessage() {
         Sign_in_factory_Z welcome = new Sign_in_factory_Z();
         welcome.welcomeMessage();
+
 
 
     }
@@ -51,7 +56,7 @@ public class Stepdefs_Z {
 
     @Then("the user should not be able to sign in")
     public void theUserShouldNotBeAbleToSignIn() {
-        SeleniumUtils.waitForVisibility(new Sign_in_factory_Z().errorMessage, 5);
+        SeleniumUtils.waitForVisibility(new Sign_in_factory_Z().errorMessage, 3);
         Assert.assertTrue(new Sign_in_factory_Z().errorMessage.isDisplayed());
 
     }
@@ -72,8 +77,8 @@ public class Stepdefs_Z {
 
     }
 
-    @And("the user should be able to see the error message \"Please fill out this field")
-    public void theUserShouldBeAbleToSeeTheErrorMessagePleaseFillOutThisField() throws Throwable {
+    @And("the user should be able to see the error message \"Please fill out this field\"")
+    public void theUserShouldBeAbleToSeeTheErrorMessagePleaseFillOutThisField()  {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String text = (String) js.executeScript("return document.getElementById('email').validationMessage");
         Assert.assertEquals("Please fill out this field.", text);
@@ -83,9 +88,7 @@ public class Stepdefs_Z {
     @When("the user enters invalid username")
     public void theUserEntersInvalidUsername() {
         Sign_in_factory_Z invalidusername = new Sign_in_factory_Z();
-        invalidusername.noPassword();
-
-
+        invalidusername.invalidEmail();
     }
 
     @When("the user enters invalid password")

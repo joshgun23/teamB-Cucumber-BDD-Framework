@@ -1,6 +1,7 @@
 package pages;
 
 import com.github.javafaker.Faker;
+import lombok.Data;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import utils.ConfigReader;
 import utils.Driver;
 
 import java.time.Duration;
-
+@Data
 public class Sign_in_factory_Z {
     public Sign_in_factory_Z() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -49,11 +50,9 @@ public class Sign_in_factory_Z {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-block btn-lg loginbtn']")
     private WebElement login3;
 
-    @FindBy(id = "hideLogin")
+    @FindBy(xpath = "//*[@id=\"auth-login\"]/div/div/div/div[1]/div/div[2]/div/div[3]/a")
     public WebElement signUpLink;
 
-    // Web App does not have a Forgot Password link
-    //Make sure to add it to the Web App
 
     public void username(String email) {
         eMail.sendKeys(email);
@@ -61,23 +60,15 @@ public class Sign_in_factory_Z {
 
     }
 
-    public void password(String pass) {
-        password.sendKeys(pass);
-    }
 
-    public WebElement geteMail() {
-        return eMail;
-    }
-
-    public WebElement getPassword() {
-        return password;
-    }
 
     public void SignIn() {
         eMail.sendKeys(ConfigReader.getProperty("username"));
         password.sendKeys(ConfigReader.getProperty("password"));
-        login.click();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        login.click();
+
+        Assert.assertEquals("Dashboard", dashboard.getText());
     }
 
     public void invalidEmail() {
@@ -146,6 +137,9 @@ public class Sign_in_factory_Z {
     public void forgotPasswordLink() {
         //forgotPasswordLink.click();
         //Assert.assertEquals("https://duobank-dev.herokuapp.com/forgot-password", Driver.getDriver().getCurrentUrl());
+        //there is no forgot password link on the web app
+        //user should be able to reset password by clicking on the forgot password link
+        //make sure to add it
     }
 }
 
