@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-       tags = "@smoke",//"@smoke and @negativ" "@smoke or @positive","@smoke or @regression","@regression","@test12"
+        tags = "@testOutline2",//"@smoke",//"@smoke and @negativ" "@smoke or @positive","@smoke or @regression","@regression","@test12"
         features = "src/test/resources",
         glue = "stepDefinitions",
         stepNotifications = true,//give us all step detailed result
@@ -18,5 +18,7 @@ import org.junit.runner.RunWith;
 
 )
 public class PersonalInfo_C_Runner {
+
+
 
 }

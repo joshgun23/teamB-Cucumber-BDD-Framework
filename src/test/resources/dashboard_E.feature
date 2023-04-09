@@ -1,4 +1,4 @@
-
+@eric
 Feature: Dashboard page functionality
 
   Scenario: 1 User signs in with valid credentials
@@ -8,7 +8,7 @@ Feature: Dashboard page functionality
     Then the user should be redirected to the mortgage account dashboard
 
   Scenario: 2 Verify the dashboard page functionality
-    Given User on the dashboard page
+#    Given User on the dashboard page
     Then Bank logo should be displayed in the top left corner of the page
     And User should see the "Mortgage Application" and "Application List" links
     When User click on the "Mortgage Application" link
@@ -16,7 +16,7 @@ Feature: Dashboard page functionality
     When User click on the "Application List" link
 
     Scenario: 3 Account informatiom
-      Given The user's account information
+#      Given The user's account information
     And User should see my account information in the top right corner
     When User click on my name or profile picture
     Then User should see a dropdown menu with a "Logout" link
