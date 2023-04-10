@@ -1,4 +1,4 @@
-@regression @ziyoda
+@ziyoda
 Feature: Electronic Consent for Mortgage Loan Application
 
   Scenario Outline: User can consent electronically to do business

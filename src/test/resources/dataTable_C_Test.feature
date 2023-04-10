@@ -19,6 +19,7 @@ Feature: As a potential homebuyer
     Then sulfix "Jr."
     Then all required xpath "Jr." are filled out
 
+    @coshgun1254
   Scenario: User fills out Personal Information information
     Then an additional section for personal information  information is displayed
     Then Click in sulfix place

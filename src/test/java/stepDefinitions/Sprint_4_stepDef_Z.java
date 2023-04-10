@@ -1,5 +1,4 @@
-sprint 4-2
-        package stepDefinitions;
+package stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -48,7 +47,7 @@ public class Sprint_4_stepDef_Z {
 
 
         //Rina's class -employment and income
-        new EmploymentAndIncomePage_R().getToCreditReportPage();
+        new Employment_And_Income_Page_R().getToCreditReportPage();
         Assert.assertTrue("employment and income", Driver.getDriver().getPageSource().contains("Employment and Income"));
 
 
@@ -92,7 +91,6 @@ public class Sprint_4_stepDef_Z {
 //        for (String browserName : browser) {
 //            Driver.getDriver().get(browserName);
 
-        }
 
 
     @When("the user not enters their first name")
