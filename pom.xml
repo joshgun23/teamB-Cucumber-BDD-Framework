@@ -80,12 +80,19 @@
                     <configuration>
                         <includes>
                             <include>PersonalInfo_C_Runner.java</include>
+<!--                            <include>PersonalInfo_C_Parallel_Runner.java</include>-->
+
                         </includes>
+                        <!-- the following 2 lines should be added only when you want feature files in parallel
+                           for a normal run, they should be removed or commented out-->
+                        <parallel>methods</parallel>
+                        <useUnlimitedThreads>true</useUnlimitedThreads>
                     </configuration>
 
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
 
 </project>

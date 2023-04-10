@@ -14,21 +14,47 @@ public class Hooks {
 
 
 
-    @Before // runs before each scenario
+    @Before () // runs before each scenario tagged with @UI
     public void setUpScenario(){
-        Driver.getDriver().get(ConfigReader.getProperty("homepage"));
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        String environment = System.getProperty("env");
+
+        if(environment != null){
+            switch (environment){
+                case "QA":
+                    Driver.getDriver().get(ConfigReader.getProperty("QA"));
+                    break;
+                case "STAGING":
+                    Driver.getDriver().get(ConfigReader.getProperty("STAGING"));
+                    break;
+                case "DEV":
+                    Driver.getDriver().get(ConfigReader.getProperty("DEV"));
+                    break;
+                default:
+                    throw new RuntimeException("Not a valid environment.");
+
+            }
+        }else{
+            Driver.getDriver().get(ConfigReader.getProperty("QA"));
+        }
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Driver.getDriver().manage().window().maximize();
+
+
+
     }
 
 
-    @After  // after each scenario
+
+    @After () // after each scenario
     public void tearDownScenario(Scenario scenario){
         if(scenario.isFailed()){
             scenario.attach(((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES), "image/png", "screenshot");
         }
 
-        //Driver.quitDriver();
+        Driver.quitDriver();
+
     }
 
 }
