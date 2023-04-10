@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-      //  tags = "eric",
+      tags = "eric",
         features = "src/test/resources", // the relative path of the folder where the feature files are located
         glue = "stepDefinitions", // the relative path of the folder where step definition methods are located
         stepNotifications = true,
@@ -16,5 +16,5 @@ import org.junit.runner.RunWith;
         }
 )
 
-public class DashboardPageRunner_E {
+public class Summary_E {
 }

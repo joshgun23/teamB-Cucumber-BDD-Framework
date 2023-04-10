@@ -1,4 +1,4 @@
-@eric
+
 Feature: As a user, I want check Dashboard page functionality
 
   Scenario: User signs in with valid credentials

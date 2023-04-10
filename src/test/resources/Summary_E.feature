@@ -11,17 +11,16 @@ Feature: As a user, I want to use the Summary page functionality and all edit bu
 
 
   Scenario: Verify the summary page functionality
-    Given user on the summary page
+    Given user on the mortgageSummary page
     When user enters preapproval page
     And all required fields are filled out information
     Then able to click summary page
-    When user can see edit buttons
+    And user can see edit buttons
 
 
   Scenario: Edit button's functionality
-    When user can click to make changes
+    When user can click edit button
     And user back to the relevant page
-    Then summary page should include a "Submit" button
-    And clicking the "Submit" button should submit the application
+    Then clicking the Submit button should submit the application
 
 
