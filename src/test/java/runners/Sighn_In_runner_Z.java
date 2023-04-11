@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@Sprint4",
+        tags = "@ziyoda",
         features = "src/test/resources", // the relative path of the folder where the feature files are located
         glue = "stepDefinitions", // the relative path of the folder where step definition methods are located
         stepNotifications = true,

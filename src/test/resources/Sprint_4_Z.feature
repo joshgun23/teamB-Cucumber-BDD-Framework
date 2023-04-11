@@ -2,7 +2,7 @@
 Feature: Electronic Consent for Mortgage Loan Application
 
   Scenario Outline: User can consent electronically to do business
-	Given the user is on the electronic consent page
+	#Given the user is on the electronic consent page
 	When the user enters their first name as "<first_name>", last name as "<last_name>", and email address as "<email_address>"
 	Then the user should see two radio buttons for "Agree" and "Don't Agree"
 	And the "<default_radio_button>" button should be selected by default
@@ -20,19 +20,19 @@ Feature: Electronic Consent for Mortgage Loan Application
 	Then the user should see two radio buttons for "Agree" and "Don't Agree"
 	And the "Agree" button should be selected by default
 
-  @nofirstname
+  @negative_z
 
   Scenario: User cannot proceed without entering their first name
 	Given the user is on the electronic consent page
 	When the user not enters their first name
 	Then the user should see an error message "THIS FIELD IS REQUIRED."
 
- @nolastname
+
   Scenario: User cannot proceed without entering their last name
 	Given the user is on the electronic consent page
 	When the user not enters their last name
 	Then the user should see an error message "THIS FIELD IS REQUIRED."
-@noemail
+
   Scenario:
 	Given the user is on the electronic consent page
 	When the user not enters their email address
