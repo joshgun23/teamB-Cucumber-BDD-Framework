@@ -1,4 +1,4 @@
-@regression
+@regression @smoke
 
 Feature: As a user, I want to use the Preapproval Details page of my bank's mortgage application, so that I can provide
   the information needed to get pre-approved for a mortgage loan.

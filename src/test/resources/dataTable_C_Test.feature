@@ -1,4 +1,4 @@
-@regression
+@regression @check1
 Feature: As a potential homebuyer
 
   I want to use the Personal Information
@@ -29,6 +29,7 @@ Feature: As a potential homebuyer
       | II  |
       | III |
       | IV  |
+
 
   Scenario: User fills out Personal Information information
     Then an additional section for personal information  information is displayed

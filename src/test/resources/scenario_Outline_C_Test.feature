@@ -1,4 +1,4 @@
-@regression
+@regression @check
 Feature: As a potential homebuyer
 
   I want to use the Personal Information
@@ -19,7 +19,7 @@ Feature: As a potential homebuyer
       | john2023           |
       | 1514545152023      |
 
-  @parallel1
+  @parallel12
   Scenario Outline: User fills out Personal Information information
     Then an additional section for personal information  information is displayed
     When the user enters the personal information "<firstName>","<middlename>","<lastName>","<email>","<dateofbirth>"

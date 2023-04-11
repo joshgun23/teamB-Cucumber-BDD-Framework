@@ -1,4 +1,4 @@
-@regression @employment
+@regression @employment @smoke
 Feature: Employment and Income Related feature
 
   As a user applying for a mortgage loan, I want to provide my employment and income details to the bank,

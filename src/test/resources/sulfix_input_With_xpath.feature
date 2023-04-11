@@ -1,4 +1,4 @@
-@testc
+@testc @smoke
 Feature: As a potential homebuyer
 
   I want to use the Personal Information

@@ -284,104 +284,86 @@ public class PersonalI_Page_Factory_C {
         perPtivacyCheckBoxButton.click();
     }
 
-    //Negativ Test
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement negativpersonalName;
+
 
     public void setNegativpersonalName() {
-        negativpersonalName.sendKeys("12345454487");
+        personalName.sendKeys("12345454487");
     }
 
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement negativ_2_personalName;
 
     public void setNegativ_2_personalName() {
-        negativ_2_personalName.sendKeys("Josh12345");
+        personalName.sendKeys("Josh12345");
     }
 
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement negativ_3_personalName;
+
 
     public void setNegativ_3_personalName() {
-        negativ_3_personalName.sendKeys("J                                k");
+        personalName.sendKeys("J                                k");
     }
 
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement negativ_4_personalName;
+
 
     public void setNegativ_4_personalName() {
-        negativ_4_personalName.sendKeys("/*/*/*/**//*/*/*/*//*/*/*/**/*/*/*//");
+        personalName.sendKeys("/*/*/*/**//*/*/*/*//*/*/*/**/*/*/*//");
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personal_1_MiddleName;
 
     public void setPersonal_1_MiddleName() {
-        personal_1_MiddleName.sendKeys("12345454847454");
+        personalMiddleName.sendKeys("12345454847454");
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personal_2_MiddleName;
+
 
     public void setPersonal_2_MiddleName() {
-        personal_2_MiddleName.sendKeys("fsgdsgfs54847454");
+        personalMiddleName.sendKeys("fsgdsgfs54847454");
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personal_3_MiddleName;
+
 
     public void setPersonal_3_MiddleName() {
-        personal_3_MiddleName.sendKeys("f                           l");
+        personalMiddleName.sendKeys("f                           l");
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personal_4_MiddleName;
+
 
     public void setPersonal_4_MiddleName() {
-        personal_4_MiddleName.sendKeys("@###$$%%^^&&&^%$$&&^%$##%%@%$#@%$#@#");
+        personalMiddleName.sendKeys("@###$$%%^^&&&^%$$&&^%$##%%@%$#@%$#@#");
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement neqativpersonal_1_LastName;
+
 
     public void setPersonal_1_LastName() {
-        neqativpersonal_1_LastName.sendKeys("OnurKevin12145454544");
+        personalLastName.sendKeys("OnurKevin12145454544");
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement neqativpersonal_2_LastName;
+
 
     public void setpersonal_2_LastName() {
-        neqativpersonal_2_LastName.sendKeys("f                                     l");
+        personalLastName.sendKeys("f                                     l");
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement neqativpersonal_3_LastName;
+
 
     public void setpersonal_3_LastName() {
-        neqativpersonal_3_LastName.sendKeys("^&%^&$^&%^&*&*^*^%%&^^");
+        personalLastName.sendKeys("^&%^&$^&%^&*&*^*^%%&^^");
     }
 
     //Parametr
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement personalparametrName;
 
     public void setPersonalparametrName(String name) {
-        personalparametrName.sendKeys(name);
+        personalName.sendKeys(name);
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personalParametrMiddleName;
+
 
     public void setPersonalParametrMiddleName(String nameMiddle) {
-        personalParametrMiddleName.sendKeys(nameMiddle);
+        personalMiddleName.sendKeys(nameMiddle);
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement personalParametrLastName;
+
 
     public void setPersonalParametrLastName(String nameLast) {
-        personalParametrLastName.sendKeys(nameLast);
+        personalLastName.sendKeys(nameLast);
     }
 
     //LINK TEXT XPATH
@@ -390,11 +372,9 @@ public class PersonalI_Page_Factory_C {
         Driver.getDriver().findElement(By.xpath(xpath)).click();
     }
 
-    @FindBy(xpath = "//span[@id='select2-b_suffix-container']")
-    private WebElement currentText;
 
     public String getCurrent() {
-        return currentText.getText();
+        return perSulfixPlace.getText();
     }
 
     //Data table
@@ -408,11 +388,10 @@ public class PersonalI_Page_Factory_C {
         return allSulfixData;
     }
 
-    @FindBy(xpath = "//span[@id='select2-b_marital-container']")
-    private WebElement perMarytalStatusClick;
+
 
     public void getPerMarytalStatus() {
-        perMarytalStatusClick.click();
+        perMarytalStatus.click();
 
 
     }
@@ -426,71 +405,61 @@ public class PersonalI_Page_Factory_C {
     }
 
     //Scernario Outline
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement personalOutlineName;
+
 
     public void setPersonalOutlineName(String name) {
-        personalOutlineName.sendKeys(name);
+        personalName.sendKeys(name);
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personalOutlineMiddleName;
+
 
     public void setPersonalOutlineMiddleName(String middleName) {
-        personalOutlineMiddleName.sendKeys(middleName);
+        personalMiddleName.sendKeys(middleName);
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement personalOutlineLastName;
+
 
     public void setPersonalOutlineLastName(String lastName) {
-        personalOutlineLastName.sendKeys(lastName);
+        personalLastName.sendKeys(lastName);
     }
-    @FindBy(xpath = "//input[@id='b_email']")
-    private WebElement perEmailOutlineAd;
+
 
     public void setPerEmailOutlineAd(String email) {
-        perEmailOutlineAd.sendKeys(email);
+        perEmailAd.sendKeys(email);
     }
 
-    @FindBy(xpath = "//input[@id='b_dob']")
-    private WebElement perDateOutlineBirth;
+
 
     public void setPerDateOutlineBirth(String dateOfbirth) {
-        perDateOutlineBirth.sendKeys(dateOfbirth);
+        perDateBirth.sendKeys(dateOfbirth);
     }
     //data all in
-    @FindBy(xpath = "//input[@id='b_firstName']")
-    private WebElement personalDataTName;
+
 
     public void setPersonalDataTName(String firstName) {
-        personalDataTName.sendKeys(firstName);
+        personalName.sendKeys(firstName);
     }
 
-    @FindBy(xpath = "//input[@id='b_middleName']")
-    private WebElement personalDataTMiddleName;
+
 
     public void setPersonalDataTMiddleName(String middleName) {
-        personalDataTMiddleName.sendKeys(middleName);
+        personalMiddleName.sendKeys(middleName);
     }
 
-    @FindBy(xpath = "//input[@id='b_lastName']")
-    private WebElement personalDataTLastName;
 
     public void setPersonalDataTLastName(String lastName) {
-        personalDataTLastName.sendKeys(lastName);
+        personalLastName.sendKeys(lastName);
     }
-    @FindBy(xpath = "//input[@id='b_email']")
-    private WebElement perEmailDataTAd;
+
 
     public void setPerEmailDataTAd(String email12) {
-        perEmailDataTAd.sendKeys(email12);
+        perEmailAd.sendKeys(email12);
     }
 
-    @FindBy(xpath = "//input[@id='b_dob']")
-    private WebElement perdataDataTBirth;
+
 
     public void setPerdataDataTBirth(String dateOfBirth12) {
-        perdataDataTBirth.sendKeys(dateOfBirth12);
+        perDateBirth.sendKeys(dateOfBirth12);
     }
 }
+
