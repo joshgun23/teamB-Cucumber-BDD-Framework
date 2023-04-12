@@ -5,7 +5,7 @@ Feature: As a user-
 
   Background: Common steps for all scenarios in sign up page
 	Given the user is on the sign-in page
-
+@Signin
   Scenario: Sign in with valid credentials
 	When the user enters valid credentials
 	Then the user should be able to sign in successfully
@@ -19,7 +19,7 @@ Feature: As a user-
   Scenario: Sign in with blank credentials
 	When the user enters blank credentials
 	Then the user should not be able to sign in
-	And the user should be able to see the error message "Please fill out this field
+	And the user should be able to see the error message "Please fill out this field"
 
   Scenario: Sign in with invalid username
 	When the user enters invalid username

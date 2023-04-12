@@ -1,9 +1,10 @@
-package stepDefinitions;
+package stepDefinitions.ui;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.ExpensesPage_M;
 import pages.Sign_in_factory_Z;
 import utils.SeleniumUtils;
@@ -11,7 +12,13 @@ import utils.SeleniumUtils;
 public class Step_def_M {
 
 
-//    @Given("the user is on the Expenses page")
+    @Given("the user is on the Expenses page")
+    public void givenTheUserIsOnTheExpensesPage() {
+        ExpensesPage_M expenses = new ExpensesPage_M();
+        expenses.fillOutExpensesForm();
+
+
+    }
 //    public void givenTheUserIsOnTheExpensesPage() {
 //        System.out.println("The user is on the Expenses in page");
 //        ExpensesPage_M expenses = new ExpensesPage_M();

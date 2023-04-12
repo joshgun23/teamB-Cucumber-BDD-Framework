@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-        tags = "@check",//"@dbJosh",//"@smoke",//"@smoke and @negativ" "@smoke or @positive","@smoke or @regression","@regression","@test12"
-        features = "src/test/resources",
+        tags = "@parallel",//"@smoke",//"@smoke and @negativ" "@smoke or @positive","@smoke or @regression","@regression","@test12"
+        features = "src/test/resources/parallel",
         glue = "stepDefinitions",
         stepNotifications = true,//give us all step detailed result
         //dryRun = true,//same the headless code running but UI not opening
@@ -17,8 +17,8 @@ import org.junit.runner.RunWith;
         }
 
 )
+public class PersonalInfo_C_Parallel_Runner {
 
-public class PersonalInfo_C_Runner {
 
 
 }

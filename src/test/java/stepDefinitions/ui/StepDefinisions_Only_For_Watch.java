@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.ui;
 
 public class StepDefinisions_Only_For_Watch {
     {

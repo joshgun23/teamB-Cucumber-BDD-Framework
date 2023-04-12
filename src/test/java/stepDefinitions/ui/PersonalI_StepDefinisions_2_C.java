@@ -1,5 +1,6 @@
-package stepDefinitions;
+package stepDefinitions.ui;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +9,10 @@ import org.openqa.selenium.By;
 import pages.PersonalI_Page_Factory_C;
 import utils.Driver;
 import utils.SeleniumUtils;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class PersonalI_StepDefinisions_2_C  {
 
@@ -31,22 +36,22 @@ public class PersonalI_StepDefinisions_2_C  {
         Assert.assertTrue("Personal Information", Driver.getDriver().getPageSource().contains("Personal Information"));
 
     }
-        @Then("the user enters the personal information first name, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
-        public void theUserEntersThePersonalInformationFirstNameLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
-            PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
-            personalI_page_factory_c.setPersonalName();
-            personalI_page_factory_c.setPersonalMiddleName();
-            personalI_page_factory_c.setPersonalLastName();
-            personalI_page_factory_c.setPerSulfixPlace();
-            personalI_page_factory_c.setPerSulfixIII();
-            personalI_page_factory_c.setPerEmailAd();
-            personalI_page_factory_c.setPerDateBirth();
-            personalI_page_factory_c.setPerSSN();
-            personalI_page_factory_c.setPerMarytalStatus();
-            personalI_page_factory_c.setPerCell();
-            personalI_page_factory_c.setPerHome();
-            personalI_page_factory_c.setPerCoNextButton();
-        }
+    @Then("the user enters the personal information first name, last name, email, date of birth, SSN, marital status, cell phone, and home phone")
+    public void theUserEntersThePersonalInformationFirstNameLastNameEmailDateOfBirthSSNMaritalStatusCellPhoneAndHomePhone() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
 
     @Then("all required fields are filled out")
     public void allRequiredFieldsAreFilledOut() {
@@ -56,14 +61,14 @@ public class PersonalI_StepDefinisions_2_C  {
 
     @When("the user selects for the co-borrower question")
     public void theUserSelectsForTheCoBorrowerQuestion() throws InterruptedException {
-      SeleniumUtils.waitFor(2);
+        SeleniumUtils.waitFor(2);
         PersonalI_Page_Factory_C personalI_page_factory_c1 = new PersonalI_Page_Factory_C();
         personalI_page_factory_c1.setCoBorrower();
     }
 
     @Then("an additional section for co-borrower's information is displayed")
     public void anAdditionalSectionForCoBorrowerSInformationIsDisplayed() {
-    Assert.assertTrue("Co-Borrower's Information",Driver.getDriver().getPageSource().contains("Co-Borrower's Information"));
+        Assert.assertTrue("Co-Borrower's Information",Driver.getDriver().getPageSource().contains("Co-Borrower's Information"));
     }
     @When("the user reads the Privacy Policy and clicks the checkbox to accept the terms")
     public void theUserReadsThePrivacyPolicyAndClicksTheCheckboxToAcceptTheTerms() {
@@ -88,7 +93,7 @@ public class PersonalI_StepDefinisions_2_C  {
         personalI_page_factory_c.setPerMarytalStatus();
         personalI_page_factory_c.setPerCell();
         personalI_page_factory_c.setPerHome();
-new PersonalI_Page_Factory_C().setCoFirstName();
+        new PersonalI_Page_Factory_C().setCoFirstName();
         new PersonalI_Page_Factory_C().setCoMiddleName();
         new PersonalI_Page_Factory_C().setCoLastName();
         new PersonalI_Page_Factory_C().setCoSulfixPlace();
@@ -302,8 +307,8 @@ new PersonalI_Page_Factory_C().setCoFirstName();
     //Parametr
     @Then("the user enters the personal information neqativ first name {string}")
     public void theUserEntersThePersonalInformationFirstName(String name) {
-    PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
-    personalI_page_factory_c.setPersonalparametrName(name);
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalparametrName(name);
         personalI_page_factory_c.setPersonalMiddleName();
         personalI_page_factory_c.setPersonalLastName();
         personalI_page_factory_c.setPerSulfixPlace();
@@ -352,5 +357,118 @@ new PersonalI_Page_Factory_C().setCoFirstName();
         personalI_page_factory_c.setPerHome();
         personalI_page_factory_c.setPerCoNextButton();
     }
+
+    @Then("all required fields negativ are filled out")
+    public void allRequiredFieldsNegativAreFilledOut() {
+        Assert.assertTrue("ARE YOU APPLYING WITH A CO-BORROWER?",Driver.getDriver().getPageSource().contains("ARE YOU APPLYING WITH A CO-BORROWER?"));
+    }
+
+    //link text xpath
+    @Then("sulfix {string}")
+    public void sulfix(String linkName) {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixlinkxpath(linkName);
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
+
+    @Then("all required xpath {string} are filled out")
+    public void allRequiredXpathAreFilledOut(String linkName) {
+        Assert.assertEquals(linkName,new PersonalI_Page_Factory_C().getCurrent());
+    }
+
+    //Data Table
+    @Then("Click in sulfix place")
+    public void clickInSulfixPlace() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPerSulfixPlace();
+    }
+
+    @Then("i should see following options")
+    public void i_should_see_following_options(List<String> dataTable) {
+
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        List<String> actualy = personalI_page_factory_c.getsulfixDataT();
+
+        Assert.assertEquals(dataTable, actualy);
+        System.out.println(dataTable);
+    }
+    @Then("Click in marytal status place")
+    public void click_in_marytal_status_place() {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.getPerMarytalStatus();
+    }
+    @Then("i should see marytal status following options")
+    public void i_should_see_marytal_status_following_options(List<String> dataTable) {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        List<String> actualy = personalI_page_factory_c.marytalDataT();
+
+        Assert.assertEquals(dataTable, actualy);
+        System.out.println(dataTable);
+    }
+
+
+    //Scenario1 Outline
+    @When("the user enters the personal information {string},{string},{string},{string},{string}")
+    public void theUserEntersThePersonalInformation(String name, String middleName, String lastName, String email, String dateOfbirth) {
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalOutlineName(name);
+        personalI_page_factory_c.setPersonalOutlineMiddleName(middleName);
+        personalI_page_factory_c.setPersonalOutlineLastName(lastName);
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailOutlineAd(email);
+        personalI_page_factory_c.setPerDateOutlineBirth(dateOfbirth);
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+
+    }
+
+
+    @Then("all required fields positiv are filled out")
+    public void allRequiredFieldsPositivAreFilledOut() {
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Current Monthly Housing Expenses"));
+
+    }
+
+    //Data table all in
+    @When("the user enters the personal information")
+    public void the_user_enters_the_personal_information( List<List<String>> dataTable) {
+
+        String firstName = dataTable.get(0).get(0);
+        String middleName = dataTable.get(0).get(1);
+        String lastName = dataTable.get(0).get(2);
+        String email12 = dataTable.get(0).get(3);
+        String dateOfBirth12 = dataTable.get(0).get(4);
+
+        // Fill out the personal information section
+        PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
+        personalI_page_factory_c.setPersonalDataTName(firstName);
+        personalI_page_factory_c.setPersonalDataTMiddleName(middleName);
+        personalI_page_factory_c.setPersonalDataTLastName(lastName);
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailDataTAd(email12);
+        personalI_page_factory_c.setPerdataDataTBirth(dateOfBirth12);
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+    }
 }
+
+
 
