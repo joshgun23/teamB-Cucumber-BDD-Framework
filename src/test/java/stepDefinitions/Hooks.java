@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utils.ConfigReader;
+import utils.DBUtils;
 import utils.Driver;
 
 import java.time.Duration;
@@ -44,7 +45,15 @@ public class Hooks {
 
 
     }
-
+    @Before ("@DB") // runs before each scenario tagged with @UI
+    public void setUpScenarioForDbTests(){
+        DBUtils.createConnection();
+    }
+    //
+    @After ("@DB") // runs before each scenario tagged with @UI
+    public void tearDownScenarioForDbTests(){
+        DBUtils.close();
+    }
 
 
     @After () // after each scenario

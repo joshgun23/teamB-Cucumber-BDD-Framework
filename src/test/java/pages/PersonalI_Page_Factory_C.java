@@ -26,7 +26,7 @@ public class PersonalI_Page_Factory_C {
 
     public void userName1() {
         userName.click();
-        userName.sendKeys("Coshgun.ismayilov@lenta.ru");
+        userName.sendKeys("Coshgun.ismayilov231985@lenta.com");
     }
 
     @FindBy(name = "password")
