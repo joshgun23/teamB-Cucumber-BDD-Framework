@@ -15,7 +15,7 @@ public class Hooks {
 
 
 
-    @Before () // runs before each scenario tagged with @UI
+    @Before ("not @db_only") // runs before each scenario tagged with @UI
     public void setUpScenario(){
 
         String environment = System.getProperty("env");
@@ -56,7 +56,7 @@ public class Hooks {
     }
 
 
-    @After () // after each scenario
+    @After ("not @db_only") // after each scenario
     public void tearDownScenario(Scenario scenario){
         if(scenario.isFailed()){
             scenario.attach(((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES), "image/png", "screenshot");
