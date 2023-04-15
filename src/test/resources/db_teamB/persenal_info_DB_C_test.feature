@@ -1,13 +1,19 @@
 @dbJosh
-Feature: As a potential homebuyer
+Feature: Storing Personal Information in Duobank Mortgage Application
 
-  I want to use the Personal Information
-  page of my bank's mortgage application
+
 
   Background: Common steps for all scenarios in sign up page
     Given userName1
 
-  Scenario: User fills out Personal Information information
+  Scenario: Storing Borrower and Co-Borrower Personal Information
     Then an additional section for personal information  information is displayed
-    Then the user enters the personal information first name, last name, email, date of birth, SSN, marital status, cell phone, and home phone
-    Then all required fields are filled out
+    When I enter the borrower's information:
+      | First Name | Middle Name | Last Name | Suffix | Email | Date of Birth | SSN | Marital Status | Cell | Home |
+      | John       | M            | Doe       | Mr     | john.doe@email.com | 01/01/1980 | 123-45-6789 | Single | 1234567890 | 9876543210 |
+#    And I select "Yes" for co-borrower question
+#    And I enter the co-borrower's information:
+#      | First Name | Middle Name | Last Name | Suffix | Email | Date of Birth | SSN | Marital Status | Cell | Home |
+#      | Jane       | A            | Smith     | Mrs    | jane.smith@email.com | 02/02/1990 | 987-65-4321 | Married | 9876543210 | 1234567890 |
+#    And I submit the form
+#    Then the borrower's and co-borrower's information should be stored in the "tbl_mortgage" table in the database
