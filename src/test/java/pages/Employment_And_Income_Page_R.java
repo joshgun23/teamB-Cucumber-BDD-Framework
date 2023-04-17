@@ -179,6 +179,21 @@ public class Employment_And_Income_Page_R {
         nextButton.click();
     }
 
+    public void passEmploymentPage() {
+        Faker faker = new Faker();
+        Employment_And_Income_Page_R employmentAndIncomePage = new Employment_And_Income_Page_R();
+        employer.sendKeys(faker.name().fullName());
+        position.sendKeys(faker.company().profession());
+        enterCity.sendKeys(faker.address().city());
+        state.click();
+        state.sendKeys("F", Keys.ENTER);
+        startDate.sendKeys(faker.backToTheFuture().date());
+        int salary = faker.number().numberBetween(5000, 10000);
+        enterGrossMonthlyIncome.sendKeys(String.valueOf(salary));
+        nextButton.click();
+    }
+
+
     public void enterCredentials(String employerName, String employerPosition,
                                  String city, String grossMonthlyIncome) {
 
