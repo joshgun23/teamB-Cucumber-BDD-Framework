@@ -285,7 +285,6 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setNegativpersonalName() {
         personalName.sendKeys("12345454487");
     }
@@ -296,11 +295,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setNegativ_3_personalName() {
         personalName.sendKeys("J                                k");
     }
-
 
 
     public void setNegativ_4_personalName() {
@@ -313,11 +310,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPersonal_2_MiddleName() {
         personalMiddleName.sendKeys("fsgdsgfs54847454");
     }
-
 
 
     public void setPersonal_3_MiddleName() {
@@ -325,11 +320,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPersonal_4_MiddleName() {
         personalMiddleName.sendKeys("@###$$%%^^&&&^%$$&&^%$##%%@%$#@%$#@#");
     }
-
 
 
     public void setPersonal_1_LastName() {
@@ -337,11 +330,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setpersonal_2_LastName() {
         personalLastName.sendKeys("f                                     l");
     }
-
 
 
     public void setpersonal_3_LastName() {
@@ -355,11 +346,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPersonalParametrMiddleName(String nameMiddle) {
         personalMiddleName.sendKeys(nameMiddle);
     }
-
 
 
     public void setPersonalParametrLastName(String nameLast) {
@@ -382,12 +371,11 @@ public class PersonalI_Page_Factory_C {
     @FindBy(xpath = "//li[@class='select2-results__option']")
     private List<WebElement> sulfixDataTableText;
 
-    public List<String> getsulfixDataT(){
+    public List<String> getsulfixDataT() {
 
         List<String> allSulfixData = SeleniumUtils.getElementsText(sulfixDataTableText);
         return allSulfixData;
     }
-
 
 
     public void getPerMarytalStatus() {
@@ -395,10 +383,11 @@ public class PersonalI_Page_Factory_C {
 
 
     }
+
     @FindBy(xpath = "//li[@class='select2-results__option']")
     private List<WebElement> marytalDataTableText;
 
-    public List<String> marytalDataT(){
+    public List<String> marytalDataT() {
 
         List<String> allMarytalData = SeleniumUtils.getElementsText(marytalDataTableText);
         return allMarytalData;
@@ -412,11 +401,9 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPersonalOutlineMiddleName(String middleName) {
         personalMiddleName.sendKeys(middleName);
     }
-
 
 
     public void setPersonalOutlineLastName(String lastName) {
@@ -429,7 +416,6 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPerDateOutlineBirth(String dateOfbirth) {
         perDateBirth.sendKeys(dateOfbirth);
     }
@@ -439,7 +425,6 @@ public class PersonalI_Page_Factory_C {
     public void setPersonalDataTName(String firstName) {
         personalName.sendKeys(firstName);
     }
-
 
 
     public void setPersonalDataTMiddleName(String middleName) {
@@ -457,9 +442,70 @@ public class PersonalI_Page_Factory_C {
     }
 
 
-
     public void setPerdataDataTBirth(String dateOfBirth12) {
         perDateBirth.sendKeys(dateOfBirth12);
     }
-}
 
+//expenses
+    @FindBy(xpath = "//input[@id='monthlyrentalpayment']")
+    private WebElement housingExpenses;
+
+    public void setHousingExpenses() {
+        housingExpenses.sendKeys("5000");
+    }
+    @FindBy(xpath = "//a[normalize-space()='Next']")
+    private WebElement housingExpensesClick;
+
+    public void setHousingExpensesClick() {
+        housingExpensesClick.click();
+    }
+    //credit report
+    @FindBy(xpath = "//label[@for='creditreport2']")
+    private WebElement creditReport;
+
+    public void setCreditReportJoshgun() {
+        creditReport.click();
+    }
+    @FindBy(xpath = "//a[normalize-space()='Next']")
+    private WebElement creditReportClick;
+
+    public void setCreditReportClick() {
+        creditReportClick.click();
+    }
+    @FindBy(xpath = "//input[@id='eConsentdeclarerFirstName']")
+    private WebElement eConsentFName;
+
+    public void seteConsentFName() {
+        eConsentFName.sendKeys(faker.name().firstName());
+    }
+    @FindBy(xpath = "//input[@id='eConsentdeclarerLastName']")
+    private WebElement eConsentLName;
+
+    public void seteConsentLName() {
+        eConsentLName.sendKeys(faker.name().lastName());
+    }
+    @FindBy(xpath = "//input[@id='eConsentdeclarerEmail']")
+    private WebElement eConsentEmail;
+
+    public void seteConsentEmail() {
+        eConsentEmail.sendKeys(faker.internet().emailAddress());
+    }
+    @FindBy(xpath = "//label[@for='agree']")
+    private WebElement eConsentAgree;
+
+    public void seteConsentAgree() {
+        eConsentAgree.click();
+    }
+    @FindBy(xpath = "//a[normalize-space()='Next']")
+    private WebElement eConsentClick;
+
+    public void seteConsentClick() {
+        eConsentClick.click();
+    }
+    @FindBy(xpath = "//a[normalize-space()='Submit']")
+    private WebElement summarySubmit;
+
+    public void setSummarySubmit() {
+        summarySubmit.click();
+    }
+}
