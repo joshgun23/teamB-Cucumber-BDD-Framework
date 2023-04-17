@@ -1,4 +1,10 @@
 package utils;
+
+import org.junit.Assert;
+import pages.Sign_in_factory_Z;
+
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryUsage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -6,14 +12,18 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class DBUtils {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+
+
     public static void createConnection() {
         String url = ConfigReader.getProperty("db_url");
         String user = ConfigReader.getProperty("db_username");
@@ -24,6 +34,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
+
     public static void close() {
         try {
             if (resultSet != null) {
@@ -39,7 +50,8 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-    private static void executeQuery(String query) {
+
+    public static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             resultSet = statement.executeQuery(query);
@@ -47,6 +59,7 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
+
     public static int executeUpdate(String query) throws SQLException {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -54,11 +67,12 @@ public class DBUtils {
             e.printStackTrace();
         }
         int result = statement.executeUpdate(query);
-        if(result==0){
+        if (result == 0) {
             throw new RuntimeException("Update was unsuccessful.");
         }
         return result;
     }
+
     public static List<List<Object>> getListOfLists(String query) {
         executeQuery(query);
         List<List<Object>> rowList = new ArrayList<>();
@@ -77,6 +91,7 @@ public class DBUtils {
         }
         return rowList;
     }
+
     public static List<Map<String, Object>> getListOfMaps(String query) {
         executeQuery(query);
         List<Map<String, Object>> rowList = new ArrayList<>();
@@ -95,6 +110,7 @@ public class DBUtils {
         }
         return rowList;
     }
+
     public static List<String> getColumnNames(String query) {
         executeQuery(query);
         List<String> columns = new ArrayList<>();
@@ -110,6 +126,7 @@ public class DBUtils {
         }
         return columns;
     }
+
     public static int getRowCount() {
         int rowCount = 0;
         try {
@@ -120,12 +137,14 @@ public class DBUtils {
         }
         return rowCount;
     }
-    public static List<String> getSingleColumnValues(String columnName, String tableName ){
-        List<String> list =  new ArrayList<>();
-        for (Map<String, Object> row : getListOfMaps("SELECT "+columnName+" from "+tableName+"")) {
-            list.add((String)(row.get(columnName)));
+
+    public static List<String> getSingleColumnValues(String columnName, String tableName) {
+        List<String> list = new ArrayList<>();
+        for (Map<String, Object> row : getListOfMaps("SELECT " + columnName + " from " + tableName + "")) {
+            list.add((String) (row.get(columnName)));
         }
 
         return list;
     }
+
 }

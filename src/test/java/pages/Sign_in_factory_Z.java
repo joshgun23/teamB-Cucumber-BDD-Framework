@@ -3,9 +3,14 @@ package pages;
 import com.github.javafaker.Faker;
 import lombok.Data;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ConfigReader;
 import utils.Driver;
 
@@ -26,7 +31,7 @@ public class Sign_in_factory_Z {
     public WebElement login;
 
     @FindBy(xpath = "//a[@class='dropdown-toggle']")
-    private WebElement dashboard;
+    private static WebElement dashboard;
 
     @FindBy(id = "email")
     private WebElement invalidEmail;
@@ -52,6 +57,89 @@ public class Sign_in_factory_Z {
 
     @FindBy(xpath = "//*[@id=\"auth-login\"]/div/div/div/div[1]/div/div[2]/div/div[3]/a")
     public WebElement signUpLink;
+
+    @FindBy(xpath = "/html//section[@id='auth-login']/div/div//a[@href='register.php']/small[.='Sign up']")
+    private WebElement SignUpLink;
+
+    @FindBy(css="input#first-name")
+    private static WebElement firstName;
+
+    @FindBy(css="input#last-name")
+    public static WebElement lastName;
+
+    @FindBy(css="input#email")
+    public static WebElement email;
+
+    @FindBy(css="input#exampleInputPassword1")
+    private static WebElement password2;
+
+    @FindBy(css="button#sign-up-button")
+    private static WebElement signUpButton;
+
+    @FindBy(css = "span#emailerror")
+    public WebElement usedEmail;
+
+    @FindBy(css=".mb-2.text-center")
+    public WebElement welcomeBack;
+
+
+    public void signNewUser(){
+
+        SignUpLink.click();
+        Faker faker = new Faker();
+        firstName.sendKeys(faker.name().firstName());
+        lastName.sendKeys(faker.name().lastName());
+        email.sendKeys(faker.internet().emailAddress());
+        password2.sendKeys(faker.internet().password());
+        signUpButton.click();
+        Assert.assertEquals("Dashboard", dashboard.getText());
+    }
+
+    public void sameUsername() throws InterruptedException {
+        SignUpLink.click();
+        firstName.sendKeys("Ava");
+        lastName.sendKeys("Max");
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(email, "ziyoda.muslimova@gmail.com").sendKeys(Keys.ENTER).perform();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(3));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span#emailerror")));
+        Thread.sleep(3000);
+        Assert.assertEquals("This email already used", errorMessage.getText());
+    }
+
+    public void signUpMichael(String mail) throws InterruptedException {
+        SignUpLink.click();
+        Faker faker = new Faker();
+        firstName.sendKeys(faker.name().firstName());
+        lastName.sendKeys(faker.name().lastName());
+        email.sendKeys(faker.internet().emailAddress());
+        password2.sendKeys(faker.internet().password());
+        signUpButton.click();
+        Assert.assertEquals("Welcome Back!", welcomeBack.getText());
+
+    }
+
+
+
+
+
+
+//        firstName.sendKeys("Michael");
+//        lastName.sendKeys("Jackson");
+//        email.sendKeys("michaeljackson@gmail.com");
+//        password2.sendKeys("123456");
+//        Thread.sleep(2000);
+//        signUpButton.click();
+//        Assert.assertEquals("Dashboard", dashboard.getText());
+
+
+
+
+
+
+
+
+
 
 
     public void username(String email) {
