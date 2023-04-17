@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
-      // tags = "", // runs scenarios with the given tag only
-        features = "src/test/resources/user_login_Z.feature", // the path where all feature files are located
+       tags = "@db", // runs scenarios with the given tag only//
+        features = "src/test/resources/mortgage_E.feature", // the path where all feature files are located
       glue = "stepDefinitions", // path where all step definition classes are located
         plugin = {
                 "pretty", // adds more detailed output log in the cmd console
