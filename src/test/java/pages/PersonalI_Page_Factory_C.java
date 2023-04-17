@@ -2,14 +2,14 @@ package pages;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utils.Driver;
 import utils.SeleniumUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PersonalI_Page_Factory_C {
@@ -26,7 +26,7 @@ public class PersonalI_Page_Factory_C {
 
     public void userName1() {
         userName.click();
-        userName.sendKeys("Coshgun.ismayilov231985@lenta.com");
+        userName.sendKeys("Coshgun.ismayilov231985@gmail87.com");
     }
 
     @FindBy(name = "password")
@@ -89,21 +89,25 @@ public class PersonalI_Page_Factory_C {
     private WebElement coFirstName;
 
     public void setCoFirstName() {
-        coFirstName.sendKeys("Josh");
+        coFirstName.sendKeys(faker.name().firstName());
     }
 
     @FindBy(xpath = "//input[@id='c_middleName']")
     private WebElement coMiddleName;
 
     public void setCoMiddleName() {
-        coMiddleName.sendKeys("Joshua");
+        coMiddleName.sendKeys(faker.name().firstName());
     }
 
     @FindBy(xpath = "//input[@id='c_lastName']")
     private WebElement coLastName;
 
     public void setCoLastName() {
-        coLastName.sendKeys("JoshuaX");
+        coLastName.sendKeys("ismayilov");
+    }
+
+    public void setCoLastNameDB(String lastName) {
+        this.coLastName.sendKeys(lastName);
     }
 
     @FindBy(xpath = "(//span[@id='select2-c_suffix-container'])[1]")
@@ -149,20 +153,30 @@ public class PersonalI_Page_Factory_C {
         coSSN.sendKeys("123456789");
     }
 
-    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/form[1]/div[2]/fieldset[2]/div[3]/div[3]/div[2]/div[1]/div[1]/span[1]/span[1]/span[1]")
+    @FindBy(xpath = "//span[@id='select2-c_marital-container']")
     private WebElement coMarytalStatus;
 
     public void setCoMarytalStatus() {
         coMarytalStatus.click();
-        //coMarytalStatus.sendKeys(Keys.ENTER);
-//        SeleniumUtils.waitForClickablility(coMarytalStatus,10);
-        //  coMarytalStatus.sendKeys("Married");
-        //SeleniumUtils.waitFor(5);
-        List<WebElement> maritalStatus = Driver.getDriver().findElements(By.xpath("//li[@class='select2-results__option']"));
-        int dayIndex1 = (int) (Math.random() * maritalStatus.size());
-        maritalStatus.get(dayIndex1).click();
+//        //coMarytalStatus.sendKeys(Keys.ENTER);
+////        SeleniumUtils.waitForClickablility(coMarytalStatus,10);
+//        //  coMarytalStatus.sendKeys("Married");
+//        //SeleniumUtils.waitFor(5);
+//        List<WebElement> maritalStatus = Driver.getDriver().findElements(By.xpath("//li[@class='select2-results__option']"));
+//        int dayIndex1 = (int) (Math.random() * maritalStatus.size());
+//        maritalStatus.get(dayIndex1).click();
+//
+//        perMarytalStatus.click();
+        List<WebElement> perMarytal = Driver.getDriver().findElements(By.xpath("//ul//li[@class='select2-results__option']"));
+        int dayIndex1 = (int) (Math.random() * perMarytal.size());
+        perMarytal.get(dayIndex1).click();
     }
 
+    //    @FindBy(xpath = "//li[.='Married']")
+//    private WebElement coMarytalStatusChoose;
+//
+//    public void getcoMarytalStatusChoose() {
+//        coMarytalStatusChoose.click();}
     //    @FindBy(css = "#select2-c_marital-result-ujzf-Married")
 //    private WebElement coMarytalp;
 //
@@ -230,6 +244,15 @@ public class PersonalI_Page_Factory_C {
         perEmailAd.sendKeys(faker.internet().emailAddress());
     }
 
+    public void setNewEmail(String newEmail) {
+        perEmailAd.sendKeys(newEmail);
+    }
+
+
+    public void setPerEmailDB(String emailDB1) {
+        this.perEmailAd.sendKeys(emailDB1);
+    }
+
     @FindBy(xpath = "//input[@id='b_dob']")
     private WebElement perDateBirth;
 
@@ -254,6 +277,20 @@ public class PersonalI_Page_Factory_C {
         int dayIndex1 = (int) (Math.random() * perMarytal.size());
         perMarytal.get(dayIndex1).click();
     }
+
+    public void setPerMarytalStatusDBCLICK() {
+        perMarytalStatus.click();
+    }
+
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    private WebElement maritalLocationDB;
+
+    public void setPerMarytalStatusDB(String maritalStatusDB) {
+
+        this.maritalLocationDB.sendKeys(maritalStatusDB);
+        maritalLocationDB.sendKeys(Keys.ENTER);
+    }
+
 
     @FindBy(xpath = "(//input[@id='b_cell'])[1]")
     private WebElement perCell;
@@ -285,6 +322,7 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setNegativpersonalName() {
         personalName.sendKeys("12345454487");
     }
@@ -295,9 +333,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setNegativ_3_personalName() {
         personalName.sendKeys("J                                k");
     }
+
 
 
     public void setNegativ_4_personalName() {
@@ -310,9 +350,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPersonal_2_MiddleName() {
         personalMiddleName.sendKeys("fsgdsgfs54847454");
     }
+
 
 
     public void setPersonal_3_MiddleName() {
@@ -320,9 +362,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPersonal_4_MiddleName() {
         personalMiddleName.sendKeys("@###$$%%^^&&&^%$$&&^%$##%%@%$#@%$#@#");
     }
+
 
 
     public void setPersonal_1_LastName() {
@@ -330,9 +374,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setpersonal_2_LastName() {
         personalLastName.sendKeys("f                                     l");
     }
+
 
 
     public void setpersonal_3_LastName() {
@@ -346,9 +392,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPersonalParametrMiddleName(String nameMiddle) {
         personalMiddleName.sendKeys(nameMiddle);
     }
+
 
 
     public void setPersonalParametrLastName(String nameLast) {
@@ -371,11 +419,12 @@ public class PersonalI_Page_Factory_C {
     @FindBy(xpath = "//li[@class='select2-results__option']")
     private List<WebElement> sulfixDataTableText;
 
-    public List<String> getsulfixDataT() {
+    public List<String> getsulfixDataT(){
 
         List<String> allSulfixData = SeleniumUtils.getElementsText(sulfixDataTableText);
         return allSulfixData;
     }
+
 
 
     public void getPerMarytalStatus() {
@@ -383,11 +432,10 @@ public class PersonalI_Page_Factory_C {
 
 
     }
-
     @FindBy(xpath = "//li[@class='select2-results__option']")
     private List<WebElement> marytalDataTableText;
 
-    public List<String> marytalDataT() {
+    public List<String> marytalDataT(){
 
         List<String> allMarytalData = SeleniumUtils.getElementsText(marytalDataTableText);
         return allMarytalData;
@@ -401,9 +449,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPersonalOutlineMiddleName(String middleName) {
         personalMiddleName.sendKeys(middleName);
     }
+
 
 
     public void setPersonalOutlineLastName(String lastName) {
@@ -416,6 +466,7 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPerDateOutlineBirth(String dateOfbirth) {
         perDateBirth.sendKeys(dateOfbirth);
     }
@@ -425,6 +476,7 @@ public class PersonalI_Page_Factory_C {
     public void setPersonalDataTName(String firstName) {
         personalName.sendKeys(firstName);
     }
+
 
 
     public void setPersonalDataTMiddleName(String middleName) {
@@ -442,11 +494,11 @@ public class PersonalI_Page_Factory_C {
     }
 
 
+
     public void setPerdataDataTBirth(String dateOfBirth12) {
         perDateBirth.sendKeys(dateOfBirth12);
     }
-
-//expenses
+    //expenses
     @FindBy(xpath = "//input[@id='monthlyrentalpayment']")
     private WebElement housingExpenses;
 
@@ -459,6 +511,39 @@ public class PersonalI_Page_Factory_C {
     public void setHousingExpensesClick() {
         housingExpensesClick.click();
     }
+
+    //employesmenent
+    @FindBy(xpath = "//input[@id='co-employername1']")
+    public WebElement secondEmployer2;
+
+    public void setSecondEmployer2(String employerName) {
+        this.secondEmployer2.sendKeys(employerName);
+    }
+    @FindBy(xpath = "//input[@id='co-position1']")
+    public WebElement secondEmployerPosition;
+
+    public void setSecondEmployerPosition() {
+        secondEmployerPosition.sendKeys("SDET");
+    }
+    @FindBy(xpath = "//input[@id='co-city']")
+    public WebElement secondEmployerCity;
+
+    public void setSecondEmployerCity() {
+        secondEmployerCity.sendKeys("Columbia");
+    }
+    @FindBy(xpath = "//select[@id='co-state1']")
+    public WebElement secondEmployerState;
+
+    public void getsecondEmployerState() {
+        secondEmployerState.sendKeys("maryland");
+    }
+    @FindBy(xpath = "//input[@id='co-start_date1']")
+    public WebElement secondEmployerStartDate;
+
+    public void setSecondEmployerStartDate() {
+        secondEmployerStartDate.sendKeys("01012020");
+    }
+
     //credit report
     @FindBy(xpath = "//label[@for='creditreport2']")
     private WebElement creditReport;
@@ -472,6 +557,9 @@ public class PersonalI_Page_Factory_C {
     public void setCreditReportClick() {
         creditReportClick.click();
     }
+
+    //econtest
+
     @FindBy(xpath = "//input[@id='eConsentdeclarerFirstName']")
     private WebElement eConsentFName;
 
@@ -489,6 +577,14 @@ public class PersonalI_Page_Factory_C {
 
     public void seteConsentEmail() {
         eConsentEmail.sendKeys(faker.internet().emailAddress());
+    }
+
+    @FindBy(xpath = "//select[@id='eConsentdeclarer']")
+    private WebElement econsantPlace;
+
+    public void setEconsantPlace() {
+        Select select = new Select(econsantPlace);
+        select.selectByVisibleText("Borrower");
     }
     @FindBy(xpath = "//label[@for='agree']")
     private WebElement eConsentAgree;

@@ -1,7 +1,5 @@
 package stepDefinitions.ui;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -11,8 +9,6 @@ import utils.Driver;
 import utils.SeleniumUtils;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 public class PersonalI_StepDefinisions_2_C  {
 
@@ -105,8 +101,6 @@ public class PersonalI_StepDefinisions_2_C  {
         new PersonalI_Page_Factory_C().setCoSSN();
         new PersonalI_Page_Factory_C().setCoSSN();
         SeleniumUtils.waitFor(5);
-        new PersonalI_Page_Factory_C().setCoMarytalStatus();
-        SeleniumUtils.waitFor(2);
         new PersonalI_Page_Factory_C().setCoMarytalStatus();
         SeleniumUtils.waitFor(2);
         new PersonalI_Page_Factory_C().setCophoneNumber();
@@ -469,6 +463,3 @@ public class PersonalI_StepDefinisions_2_C  {
         personalI_page_factory_c.setPerCoNextButton();
     }
 }
-
-
-
