@@ -1,4 +1,4 @@
-@duobankLogin
+#@DB
 Feature: Database System Security for Duobank Mortgage Application
   As a user of Duobank Mortgage Application
   I want to be able to sign up and log in securely using a database system
@@ -9,11 +9,13 @@ Feature: Database System Security for Duobank Mortgage Application
 
      Given the user is on the signup page
 
+	@sameUser
   Scenario: Database can handle large number of user signups
 	When the user submits multiple signups concurrently
 	Then the signups should complete within a reasonable time frame
 	And the system should not slow down or crash
-@sameUsername
+
+	@sameUser
   Scenario: Unique username and email address
 	Given a user with username "ziyoda.muslimova@gmail.com" already exists
 	When the user attempts to sign up with the same username and email

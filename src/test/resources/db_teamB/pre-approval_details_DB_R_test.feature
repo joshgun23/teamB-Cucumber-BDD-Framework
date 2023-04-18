@@ -1,5 +1,4 @@
-
-
+@DB
   Feature: As a user of Duobank Mortgage Application, I want my Preapproval Details page data to be stored in
     the database, so that I can access it later and the bank can process my mortgage application
 

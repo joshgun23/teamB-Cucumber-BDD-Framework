@@ -83,28 +83,8 @@ public class Personal_Info_DB_C_test {
         personalI_page_factory_c.setPerSulfixIII();
         personalI_page_factory_c.setPerEmailDataTAd(email12);
         personalI_page_factory_c.setPerdataDataTBirth(dateOfBirth12);
-        personalI_page_factory_c.setPerSSN();
-        personalI_page_factory_c.setPerMarytalStatus();
-        personalI_page_factory_c.setPerCell();
-        personalI_page_factory_c.setPerHome();
-        personalI_page_factory_c.setPerCoNextButton();
-        personalI_page_factory_c.setHousingExpenses();
-        personalI_page_factory_c.setHousingExpensesClick();
-        employment_and_income_page_r.employer.sendKeys("joshKOnur");
-        employment_and_income_page_r.position.sendKeys("menager");
-        employment_and_income_page_r.enterCity.sendKeys("columbia");
-        employment_and_income_page_r.state.sendKeys("maryland");
-        employment_and_income_page_r.startDate.sendKeys("02022223");
-        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
-        employment_and_income_page_r.nextButton.click();
-        personalI_page_factory_c.setCreditReportJoshgun();
-        personalI_page_factory_c.setCreditReportClick();
-        personalI_page_factory_c.seteConsentFName();
-        personalI_page_factory_c.seteConsentLName();
-        personalI_page_factory_c.seteConsentEmail();
-        personalI_page_factory_c.seteConsentAgree();
-        personalI_page_factory_c.seteConsentClick();
-        personalI_page_factory_c.setSummarySubmit();
+        personalI_page_factory_c.commanMethod();
+
     }
 
     @Then("A table named tbl_mortagage should store the borrower's information")
@@ -126,59 +106,12 @@ public class Personal_Info_DB_C_test {
         employerName = faker.name().firstName();
         PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
         Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
-        personalI_page_factory_c.setCoBorrower();
-        personalI_page_factory_c.setPersonalName();
-        personalI_page_factory_c.setPersonalMiddleName();
-        personalI_page_factory_c.setPersonalLastName();
-        personalI_page_factory_c.setPerSulfixPlace();
-        personalI_page_factory_c.setPerSulfixIII();
-        personalI_page_factory_c.setPerEmailAd();
-        personalI_page_factory_c.setPerDateBirth();
-        personalI_page_factory_c.setPerSSN();
-        personalI_page_factory_c.setPerMarytalStatus();
-        personalI_page_factory_c.setPerCell();
-        personalI_page_factory_c.setPerHome();
-        new PersonalI_Page_Factory_C().setCoFirstName();
-        new PersonalI_Page_Factory_C().setCoMiddleName();
+        personalI_page_factory_c.commanMethodCo();
         new PersonalI_Page_Factory_C().setCoLastNameDB(colastName);
-        new PersonalI_Page_Factory_C().setCoSulfixPlace();
-        SeleniumUtils.waitFor(2);
-        new PersonalI_Page_Factory_C().setCoSulfixSr();
-        new PersonalI_Page_Factory_C().setCoEmailAd();
-        new PersonalI_Page_Factory_C().setCoDateBirth();
-        SeleniumUtils.scrollDown(200);
-        new PersonalI_Page_Factory_C().setCoSSN();
-        new PersonalI_Page_Factory_C().setCoSSN();
-        SeleniumUtils.waitFor(5);
-        new PersonalI_Page_Factory_C().setCoMarytalStatus();
-        SeleniumUtils.waitFor(2);
-        new PersonalI_Page_Factory_C().setCophoneNumber();
-        new PersonalI_Page_Factory_C().setCoHomephoneNumber();
-        personalI_page_factory_c.setPerCoNextButton();
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Current Monthly Housing Expenses"));
-        personalI_page_factory_c.setHousingExpenses();
-        personalI_page_factory_c.setHousingExpensesClick();
-        employment_and_income_page_r.employer.sendKeys("joshKOnur");
-        employment_and_income_page_r.position.sendKeys("menager");
-        employment_and_income_page_r.enterCity.sendKeys("columbia");
-        employment_and_income_page_r.state.sendKeys("maryland");
-        employment_and_income_page_r.startDate.sendKeys("02022223");
-        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
+        personalI_page_factory_c.commanMethodCo1();
         personalI_page_factory_c.secondEmployer2.sendKeys(employerName);
-        personalI_page_factory_c.setSecondEmployerPosition();
-        personalI_page_factory_c.setSecondEmployerCity();
-        personalI_page_factory_c.getsecondEmployerState();
-        personalI_page_factory_c.setSecondEmployerStartDate();
-        employment_and_income_page_r.nextButton.click();
-        personalI_page_factory_c.setCreditReportJoshgun();
-        personalI_page_factory_c.setCreditReportClick();
-        personalI_page_factory_c.seteConsentFName();
-        personalI_page_factory_c.seteConsentLName();
-        personalI_page_factory_c.seteConsentEmail();
-        personalI_page_factory_c.setEconsantPlace();
-        personalI_page_factory_c.seteConsentAgree();
-        personalI_page_factory_c.seteConsentClick();
-        personalI_page_factory_c.setSummarySubmit();
+        personalI_page_factory_c.commanMethodCo2();
+
     }
 
     @Then("A table named tbl_mortagage should store the co_borrower's information")
@@ -204,28 +137,8 @@ public class Personal_Info_DB_C_test {
         personalI_page_factory_c.setPerSulfixIII();
         personalI_page_factory_c.setPerEmailDB(emailDB1);
         personalI_page_factory_c.setPerDateBirth();
-        personalI_page_factory_c.setPerSSN();
-        personalI_page_factory_c.setPerMarytalStatus();
-        personalI_page_factory_c.setPerCell();
-        personalI_page_factory_c.setPerHome();
-        personalI_page_factory_c.setPerCoNextButton();
-        personalI_page_factory_c.setHousingExpenses();
-        personalI_page_factory_c.setHousingExpensesClick();
-        employment_and_income_page_r.employer.sendKeys("joshKOnur");
-        employment_and_income_page_r.position.sendKeys("menager");
-        employment_and_income_page_r.enterCity.sendKeys("columbia");
-        employment_and_income_page_r.state.sendKeys("maryland");
-        employment_and_income_page_r.startDate.sendKeys("02022223");
-        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
-        employment_and_income_page_r.nextButton.click();
-        personalI_page_factory_c.setCreditReportJoshgun();
-        personalI_page_factory_c.setCreditReportClick();
-        personalI_page_factory_c.seteConsentFName();
-        personalI_page_factory_c.seteConsentLName();
-        personalI_page_factory_c.seteConsentEmail();
-        personalI_page_factory_c.seteConsentAgree();
-        personalI_page_factory_c.seteConsentClick();
-        personalI_page_factory_c.setSummarySubmit();
+        personalI_page_factory_c.commanMethod();
+
     }
 
     @Then("A table named tbl_mortagage should store the correct borrower, email adress information")
@@ -256,26 +169,8 @@ public class Personal_Info_DB_C_test {
         personalI_page_factory_c.setPerMarytalStatusDBCLICK();
         SeleniumUtils.waitFor(2);
         personalI_page_factory_c.setPerMarytalStatusDB(marytalStatusDB);
-        personalI_page_factory_c.setPerCell();
-        personalI_page_factory_c.setPerHome();
-        personalI_page_factory_c.setPerCoNextButton();
-        personalI_page_factory_c.setHousingExpenses();
-        personalI_page_factory_c.setHousingExpensesClick();
-        employment_and_income_page_r.employer.sendKeys("joshKOnur");
-        employment_and_income_page_r.position.sendKeys("menager");
-        employment_and_income_page_r.enterCity.sendKeys("columbia");
-        employment_and_income_page_r.state.sendKeys("maryland");
-        employment_and_income_page_r.startDate.sendKeys("02022223");
-        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
-        employment_and_income_page_r.nextButton.click();
-        personalI_page_factory_c.setCreditReportJoshgun();
-        personalI_page_factory_c.setCreditReportClick();
-        personalI_page_factory_c.seteConsentFName();
-        personalI_page_factory_c.seteConsentLName();
-        personalI_page_factory_c.seteConsentEmail();
-        personalI_page_factory_c.seteConsentAgree();
-        personalI_page_factory_c.seteConsentClick();
-        personalI_page_factory_c.setSummarySubmit();
+        personalI_page_factory_c.commanMethod1();
+
     }
 
     @Then("A table named tbl_mortagage should store the correct borrower, marytal status information")
@@ -312,78 +207,68 @@ public class Personal_Info_DB_C_test {
     }
 
     //Mapping
-    @When("the user enters the personal information page mapping")
-    public void theUserEntersThePersonalInformationPageMapping(List<List<String>> dataTable) {
+    String expectedfirstNameMap;
+    String middleNameMap;
+    String lastNameMap;
+    String email12Map;
+    String dateOfBirth12Map;
 
-        expectedfirstName = dataTable.get(1).get(0);
-        middleName = dataTable.get(1).get(1);
-        lastName = dataTable.get(1).get(2);
-        email12 = dataTable.get(1).get(3);
-        dateOfBirth12 = dataTable.get(1).get(4);
+    @When("the user enters the personal information page mapping")
+    public void theUserEntersThePersonalInformationPageMapping(List<Map<String,String>> dataTable) {
+
+        expectedfirstNameMap = dataTable.get(0).get("firstName");
+        middleNameMap = dataTable.get(0).get("middleName");
+        lastNameMap = dataTable.get(0).get("lastName");
+        email12Map = dataTable.get(0).get("emailmaping");
+        dateOfBirth12Map = dataTable.get(0).get("dob");
 
         // Fill out the personal information section
         PersonalI_Page_Factory_C personalI_page_factory_c = new PersonalI_Page_Factory_C();
         Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
-        personalI_page_factory_c.setPersonalDataTName(expectedfirstName);
-        personalI_page_factory_c.setPersonalDataTMiddleName(middleName);
-        personalI_page_factory_c.setPersonalDataTLastName(lastName);
+        personalI_page_factory_c.setPersonalDataTName(expectedfirstNameMap);
+        personalI_page_factory_c.setPersonalDataTMiddleName(middleNameMap);
+        personalI_page_factory_c.setPersonalDataTLastName(lastNameMap);
         personalI_page_factory_c.setPerSulfixPlace();
         personalI_page_factory_c.setPerSulfixIII();
-        personalI_page_factory_c.setPerEmailDataTAd(email12);
-        personalI_page_factory_c.setPerdataDataTBirth(dateOfBirth12);
-        personalI_page_factory_c.setPerSSN();
-        personalI_page_factory_c.setPerMarytalStatus();
-        personalI_page_factory_c.setPerCell();
-        personalI_page_factory_c.setPerHome();
-        personalI_page_factory_c.setPerCoNextButton();
-        personalI_page_factory_c.setHousingExpenses();
-        personalI_page_factory_c.setHousingExpensesClick();
-        employment_and_income_page_r.employer.sendKeys("joshKOnur");
-        employment_and_income_page_r.position.sendKeys("menager");
-        employment_and_income_page_r.enterCity.sendKeys("columbia");
-        employment_and_income_page_r.state.sendKeys("maryland");
-        employment_and_income_page_r.startDate.sendKeys("02022223");
-        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
-        employment_and_income_page_r.nextButton.click();
-        personalI_page_factory_c.setCreditReportJoshgun();
-        personalI_page_factory_c.setCreditReportClick();
-        personalI_page_factory_c.seteConsentFName();
-        personalI_page_factory_c.seteConsentLName();
-        personalI_page_factory_c.seteConsentEmail();
-        personalI_page_factory_c.seteConsentAgree();
-        personalI_page_factory_c.seteConsentClick();
-        personalI_page_factory_c.setSummarySubmit();
+        personalI_page_factory_c.setNewEmail(email12Map);
+        personalI_page_factory_c.setPerdataDataTBirth(dateOfBirth12Map);
+        personalI_page_factory_c.commanMethod();
+
     }
     @Then("A table named tbl_mortagage should store the correcect mapping information")
-    public void a_table_named_tbl_mortagage_should_store_the_correcect_mapping_information(List<List<String>> dataTable)  {
+    public void a_table_named_tbl_mortagage_should_store_the_correcect_mapping_information(List<Map<String,String>>  dataTable) throws SQLException {
 
-//        List<List<Object>> listOfLists = DBUtils.getListOfLists("select b_firstName from tbl_mortagage where b_firstName='" + expectedfirstName + "'");
-//
-//        System.out.println("Expected First Name: " + expectedfirstName);
-//        String actualFirstNameRecorded = (String) (listOfLists.get(0).get(0));
-//        System.out.println("Actual First Name Recorded in the DB: " + actualFirstNameRecorded);
-//        Assert.assertEquals(expectedfirstName, actualFirstNameRecorded);
+        String expectedfirstNameMap = null;
 
 
-        expectedfirstName = dataTable.get(0).get(0);
-        middleName = dataTable.get(1).get(1);
-        lastName = dataTable.get(1).get(2);
-        email12 = dataTable.get(1).get(3);
-        dateOfBirth12 = dataTable.get(1).get(4);
+        expectedfirstNameMap = dataTable.get(0).get("firstName");
+        String expMiddle = dataTable.get(0).get("middleName");
+        String expLast = dataTable.get(0).get("lastName");
+        String expEmail = dataTable.get(0).get("emailmaping");
+        String expDob = dataTable.get(0).get("dob");
 
-        final List<List<Object>> actualy = DBUtils.getListOfLists("SELECT * from tbl_mortagage where b_firstName='" + expectedfirstName + "'");
+        List<Map<String, Object>> actual = DBUtils.getListOfMaps("SELECT * from tbl_mortagage where b_firstName='" + expectedfirstNameMap + "'");
 
-        System.out.println("Expected First Name: " + expectedfirstName);
-        System.out.println("Actual First Name Recorded in the DB: " + actualy);
-        Assert.assertEquals(expectedfirstName,actualy.get(0).get(12));
-        Assert.assertEquals(expectedfirstName,actualy.get(0).get(13));
-        Assert.assertEquals(expectedfirstName,actualy.get(0).get(14));
-        Assert.assertEquals(expectedfirstName,actualy.get(0).get(15));
-        Assert.assertEquals(expectedfirstName,actualy.get(0).get(16));
+        String actFirstName = (String)(actual.get(0).get("b_firstName"));
+        String actMiddleName = (String) (actual.get(0).get("b_middleName"));
+        String actLast = (String)(actual.get(0).get("b_lastName"));
+        String actEmail = (String)(actual.get(0).get("b_email"));
+        String actDob = (String)(actual.get(0).get("b_dob"));
 
-    }
+        SoftAssertions softAssertions = new SoftAssertions();
 
-}
+        softAssertions.assertThat(actFirstName).isEqualTo(expectedfirstNameMap);
+        softAssertions.assertThat(actMiddleName).isEqualTo(expMiddle);
+        softAssertions.assertThat(actLast).isEqualTo(expLast);
+        softAssertions.assertThat(actEmail).isEqualTo(expEmail);
+        softAssertions.assertThat(actDob).isEqualTo(expDob);
+
+        softAssertions.assertAll();
+
+        }
+        }
+
+
 
 //    @When("I enter the borrower's information:")
 //    public void i_enter_the_borrower_s_information(io.cucumber.datatable.DataTable dataTable) {

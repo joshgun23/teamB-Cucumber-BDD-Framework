@@ -1,6 +1,7 @@
 package pages;
 
 import com.github.javafaker.Faker;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,7 @@ public class PersonalI_Page_Factory_C {
 
     public void userName1() {
         userName.click();
-        userName.sendKeys("Coshgun.ismayilov231985@gmail87.com");
+        userName.sendKeys("Coshgun.ismayilov231985@gmail8.com");
     }
 
     @FindBy(name = "password")
@@ -604,4 +605,121 @@ public class PersonalI_Page_Factory_C {
     public void setSummarySubmit() {
         summarySubmit.click();
     }
+    public void commanMethod() {
+        PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
+        Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+        personalI_page_factory_c.setHousingExpenses();
+        personalI_page_factory_c.setHousingExpensesClick();
+        employment_and_income_page_r.employer.sendKeys("joshKOnur");
+        employment_and_income_page_r.position.sendKeys("menager");
+        employment_and_income_page_r.enterCity.sendKeys("columbia");
+        employment_and_income_page_r.state.sendKeys("maryland");
+        employment_and_income_page_r.startDate.sendKeys("02022223");
+        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
+        employment_and_income_page_r.nextButton.click();
+        personalI_page_factory_c.setCreditReportJoshgun();
+        personalI_page_factory_c.setCreditReportClick();
+        personalI_page_factory_c.seteConsentFName();
+        personalI_page_factory_c.seteConsentLName();
+        personalI_page_factory_c.seteConsentEmail();
+        personalI_page_factory_c.seteConsentAgree();
+        personalI_page_factory_c.seteConsentClick();
+        personalI_page_factory_c.setSummarySubmit();
+    }
+    public void commanMethodCo() {
+        PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
+        Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
+        personalI_page_factory_c.setCoBorrower();
+        personalI_page_factory_c.setPersonalName();
+        personalI_page_factory_c.setPersonalMiddleName();
+        personalI_page_factory_c.setPersonalLastName();
+        personalI_page_factory_c.setPerSulfixPlace();
+        personalI_page_factory_c.setPerSulfixIII();
+        personalI_page_factory_c.setPerEmailAd();
+        personalI_page_factory_c.setPerDateBirth();
+        personalI_page_factory_c.setPerSSN();
+        personalI_page_factory_c.setPerMarytalStatus();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        new PersonalI_Page_Factory_C().setCoFirstName();
+        new PersonalI_Page_Factory_C().setCoMiddleName();
+
+    }
+
+    public void commanMethodCo1() {
+        PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
+        Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
+
+        new PersonalI_Page_Factory_C().setCoSulfixPlace();
+        SeleniumUtils.waitFor(2);
+        new PersonalI_Page_Factory_C().setCoSulfixSr();
+        new PersonalI_Page_Factory_C().setCoEmailAd();
+        new PersonalI_Page_Factory_C().setCoDateBirth();
+        SeleniumUtils.scrollDown(200);
+        new PersonalI_Page_Factory_C().setCoSSN();
+        new PersonalI_Page_Factory_C().setCoSSN();
+        SeleniumUtils.waitFor(5);
+        new PersonalI_Page_Factory_C().setCoMarytalStatus();
+        SeleniumUtils.waitFor(2);
+        new PersonalI_Page_Factory_C().setCophoneNumber();
+        new PersonalI_Page_Factory_C().setCoHomephoneNumber();
+        personalI_page_factory_c.setPerCoNextButton();
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Current Monthly Housing Expenses"));
+        personalI_page_factory_c.setHousingExpenses();
+        personalI_page_factory_c.setHousingExpensesClick();
+        employment_and_income_page_r.employer.sendKeys("joshKOnur");
+        employment_and_income_page_r.position.sendKeys("menager");
+        employment_and_income_page_r.enterCity.sendKeys("columbia");
+        employment_and_income_page_r.state.sendKeys("maryland");
+        employment_and_income_page_r.startDate.sendKeys("02022223");
+        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
+
+}
+    public void commanMethodCo2() {
+        PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
+        Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
+        personalI_page_factory_c.setSecondEmployerPosition();
+        personalI_page_factory_c.setSecondEmployerCity();
+        personalI_page_factory_c.getsecondEmployerState();
+        personalI_page_factory_c.setSecondEmployerStartDate();
+        employment_and_income_page_r.nextButton.click();
+        personalI_page_factory_c.setCreditReportJoshgun();
+        personalI_page_factory_c.setCreditReportClick();
+        personalI_page_factory_c.seteConsentFName();
+        personalI_page_factory_c.seteConsentLName();
+        personalI_page_factory_c.seteConsentEmail();
+        personalI_page_factory_c.setEconsantPlace();
+        personalI_page_factory_c.seteConsentAgree();
+        personalI_page_factory_c.seteConsentClick();
+        personalI_page_factory_c.setSummarySubmit();
+}
+    public void commanMethod1() {
+        PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
+        Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
+        personalI_page_factory_c.setPerCell();
+        personalI_page_factory_c.setPerHome();
+        personalI_page_factory_c.setPerCoNextButton();
+        personalI_page_factory_c.setHousingExpenses();
+        personalI_page_factory_c.setHousingExpensesClick();
+        employment_and_income_page_r.employer.sendKeys("joshKOnur");
+        employment_and_income_page_r.position.sendKeys("menager");
+        employment_and_income_page_r.enterCity.sendKeys("columbia");
+        employment_and_income_page_r.state.sendKeys("maryland");
+        employment_and_income_page_r.startDate.sendKeys("02022223");
+        employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
+        employment_and_income_page_r.nextButton.click();
+        personalI_page_factory_c.setCreditReportJoshgun();
+        personalI_page_factory_c.setCreditReportClick();
+        personalI_page_factory_c.seteConsentFName();
+        personalI_page_factory_c.seteConsentLName();
+        personalI_page_factory_c.seteConsentEmail();
+        personalI_page_factory_c.seteConsentAgree();
+        personalI_page_factory_c.seteConsentClick();
+        personalI_page_factory_c.setSummarySubmit();
+}
 }
