@@ -15,20 +15,20 @@ public class JDBCDemo {
 
     public static void main(String[] args) throws SQLException {
 
-        String url = "jdbc:mysql://apps-database.cb72canasobc.us-east-2.rds.amazonaws.com/loan";
+//        String url = "jdbc:mysql://apps-database.cb72canasobc.us-east-2.rds.amazonaws.com/loan";
+////
+//        Connection connection = DriverManager.getConnection(url, "duotech", "duotech2023");
 //
-        Connection connection = DriverManager.getConnection(url, "duotech", "duotech2023");
-
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("select * from tbl_mortagage");
-
-        resultSet.next();
-        //System.out.println(resultSet.getString(6));
-
-        while(resultSet.next()){
-             System.out.println(resultSet.getString(1) +"\t" + resultSet.getString(2) +"\t" + resultSet.getString(3) +"\t" + resultSet.getString(4) + "\t"
-                     + resultSet.getString(5) + "\t" + resultSet.getString(6));
-         }
+//        Statement statement = connection.createStatement();
+//        ResultSet resultSet = statement.executeQuery("select * from tbl_mortagage");
+//
+//        resultSet.next();
+//        //System.out.println(resultSet.getString(6));
+//
+//        while(resultSet.next()){
+//             System.out.println(resultSet.getString(1) +"\t" + resultSet.getString(2) +"\t" + resultSet.getString(3) +"\t" + resultSet.getString(4) + "\t"
+//                     + resultSet.getString(5) + "\t" + resultSet.getString(6));
+//         }
 //
 //
 //// UPDATE
@@ -76,7 +76,7 @@ public class JDBCDemo {
 //          Util class demo
 //
         // Establish connection to the DB
-//        DBUtils.createConnection();
+        DBUtils.createConnection();
 //
 //        List<List<Object>> listOfLists = DBUtils.getListOfLists("select * from users where username='duotech2001'");
 //
@@ -95,7 +95,9 @@ public class JDBCDemo {
 //
 //        System.out.println(columnNames);
 //
-//
+        //final List<List<Object>> select_email_from_tbl_user = DBUtils.getListOfLists("select email from tbl_user limit 5");
+
+        //System.out.println(select_email_from_tbl_user);
 //
 //        // UPDATE
 //        DBUtils.executeUpdate("update users set email='myEmail@gmail.com', firstName='JDBC' where username='duotech2001'");

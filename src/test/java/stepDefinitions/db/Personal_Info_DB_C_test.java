@@ -12,9 +12,8 @@ import utils.Driver;
 import utils.SeleniumUtils;
 
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 public class Personal_Info_DB_C_test {
 
     String expectedfirstName;
@@ -265,8 +264,60 @@ public class Personal_Info_DB_C_test {
 
         softAssertions.assertAll();
 
-        }
-        }
+    }
+
+    //Database cheking only
+    List<String> actual;
+    @When("I send request to retrive email from user table")
+    public void i_send_request_to_retrive_email_from_user_table() {
+        //List<List<Object>> listOfLists = DBUtils.getListOfLists("select email from tbl_user limit 5");
+        actual = DBUtils.getSingleColumnValues("email", "tbl_user limit 5");
+        System.out.println("actual" + actual);
+    }
+    @Then("It shoul be folowing exepted email")
+    public void it_shoul_be_folowing_exepted_email(List<String> expected) {
+        Collections.sort(actual);
+        expected = new ArrayList<>(expected);
+        Collections.sort(expected);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    List<String> list;
+    @When("I send request to retrive email")
+    public void i_send_request_to_retrive_email() {
+
+        list = DBUtils.getSingleColumnValues("email", "tbl_user limit 10");
+
+        System.out.println(list);
+
+    }
+    @Then("It result should contain dublicate email")
+    public void it_result_should_contain_dublicate_email() {
+
+        ArrayList<String> actual = new ArrayList<>(new LinkedHashSet<>(list));
+
+        System.out.println(actual);
+        System.out.println(list);
+
+        Assert.assertEquals(list, actual);
+
+    }
+
+    List<Map<String, Object>> expectedList;
+    @When("I send a request to retrieve duplicate usernames")
+    public void i_send_a_request_to_retrieve_duplicate_usernames() {
+
+        expectedList = DBUtils.getListOfMaps("SELECT  email,count(*) from tbl_user GROUP BY email having count(*) > 1");
+
+    }
+    @Then("The result should be empty")
+    public void the_result_should_be_empty() {
+
+        Assert.assertEquals(0, expectedList.size());
+
+    }
+}
 
 
 

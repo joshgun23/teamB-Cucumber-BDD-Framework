@@ -27,7 +27,7 @@ public class PersonalI_Page_Factory_C {
 
     public void userName1() {
         userName.click();
-        userName.sendKeys("Coshgun.ismayilov231985@gmail8.com");
+        userName.sendKeys("Coshgun.ismayilov231985@gmail2.com");
     }
 
     @FindBy(name = "password")
@@ -679,7 +679,7 @@ public class PersonalI_Page_Factory_C {
         employment_and_income_page_r.startDate.sendKeys("02022223");
         employment_and_income_page_r.enterGrossMonthlyIncome.sendKeys("10000");
 
-}
+    }
     public void commanMethodCo2() {
         PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
         Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
@@ -697,7 +697,7 @@ public class PersonalI_Page_Factory_C {
         personalI_page_factory_c.seteConsentAgree();
         personalI_page_factory_c.seteConsentClick();
         personalI_page_factory_c.setSummarySubmit();
-}
+    }
     public void commanMethod1() {
         PersonalI_Page_Factory_C personalI_page_factory_c =new PersonalI_Page_Factory_C();
         Employment_And_Income_Page_R employment_and_income_page_r = new Employment_And_Income_Page_R();
@@ -721,5 +721,5 @@ public class PersonalI_Page_Factory_C {
         personalI_page_factory_c.seteConsentAgree();
         personalI_page_factory_c.seteConsentClick();
         personalI_page_factory_c.setSummarySubmit();
-}
+    }
 }
