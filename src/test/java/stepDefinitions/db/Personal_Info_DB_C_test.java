@@ -317,6 +317,45 @@ public class Personal_Info_DB_C_test {
         Assert.assertEquals(0, expectedList.size());
 
     }
+
+    List<List<Object>> joinExcepted;
+    @When("I send a request to join tbl mortgace to tbl user")
+    public void i_send_a_request_to_join_tbl_mortgace_to_tbl_user() {
+
+        joinExcepted = DBUtils.getListOfLists("select * from tbl_mortagage as m join tbl_user as u on m.id=u.id");
+        System.out.println(joinExcepted);
+    }
+    @Then("The result should be joined")
+    public void the_result_should_be_joined() {
+
+        List<List<Object>> expected = DBUtils.getListOfLists("SELECT * FROM tbl_mortagage AS m JOIN tbl_user AS u ON m.id=u.id");
+
+        List<List<Object>> actual = joinExcepted;
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    List<List<Object>> exceptedEmail;
+    String emailExclude = "patricia.koss@yahoo.com";
+    @When("I send a request to the exclude special email {string} tbl mortgace")
+    public void i_send_a_request_to_the_exclude_special_email_tbl_mortgace(String emailExclude) {
+
+
+        exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + emailExclude + "'");
+        System.out.println(exceptedEmail);
+
+
+    }
+    @Then("The result should be veryfy exclude")
+    public void the_result_should_be_veryfy_exclude() {
+
+        List<List<Object>> actuly = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage");
+
+        Assert.assertEquals(exceptedEmail,actuly);
+
+
+    }
 }
 
 

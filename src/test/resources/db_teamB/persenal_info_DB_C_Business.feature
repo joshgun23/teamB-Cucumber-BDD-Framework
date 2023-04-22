@@ -18,7 +18,17 @@ Feature: Storing Personal Information in Duobank Mortgage Application DB TO DB
     When I send request to retrive email
     Then It result should contain dublicate email
 
-  @DB_only
+
   Scenario: Storing Borrower and Co-Borrower Personal Information
     When  I send a request to retrieve duplicate usernames
     Then  The result should be empty
+
+
+  Scenario: Storing Borrower and Co-Borrower Personal Information
+    When  I send a request to join tbl mortgace to tbl user
+    Then  The result should be joined
+
+  @DB_only
+  Scenario: Storing Borrower and Co-Borrower Personal Information
+    When  I send a request to the exclude special email "email" tbl mortgace
+    Then  The result should be veryfy exclude
