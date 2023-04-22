@@ -337,13 +337,15 @@ public class Personal_Info_DB_C_test {
     }
 
     List<List<Object>> exceptedEmail;
-    String emailExclude = "patricia.koss@yahoo.com";
+    String email = "patricia.koss@yahoo.com";
     @When("I send a request to the exclude special email {string} tbl mortgace")
     public void i_send_a_request_to_the_exclude_special_email_tbl_mortgace(String emailExclude) {
 
 
-        exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + emailExclude + "'");
-        System.out.println(exceptedEmail);
+//        exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + email + "'");
+//        System.out.println(exceptedEmail);
+        exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + email + "'");
+
 
 
     }
@@ -351,6 +353,9 @@ public class Personal_Info_DB_C_test {
     public void the_result_should_be_veryfy_exclude() {
 
         List<List<Object>> actuly = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage");
+
+        System.out.println("excepted"+exceptedEmail);
+        System.out.println("actulay"+actuly);
 
         Assert.assertEquals(exceptedEmail,actuly);
 
