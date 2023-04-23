@@ -3,7 +3,7 @@ Feature: Storing Personal Information in Duobank Mortgage Application DB TO DB
 
 
 
-
+  @DB_only
   Scenario: Storing Borrower and Co-Borrower Personal Information
     When I send request to retrive email from user table
     Then It shoul be folowing exepted email
@@ -13,17 +13,17 @@ Feature: Storing Personal Information in Duobank Mortgage Application DB TO DB
       | boyer@hotmail.com                  |
       | marie.pacocha@gmail.com            |
 
-
+  @DB_only
   Scenario: Storing Borrower and Co-Borrower Personal Information
     When I send request to retrive email
     Then It result should contain dublicate email
 
-
+  @DB_only
   Scenario: Storing Borrower and Co-Borrower Personal Information
     When  I send a request to retrieve duplicate usernames
     Then  The result should be empty
 
-
+  @DB_only
   Scenario: Storing Borrower and Co-Borrower Personal Information
     When  I send a request to join tbl mortgace to tbl user
     Then  The result should be joined

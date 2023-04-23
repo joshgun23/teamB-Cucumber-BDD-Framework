@@ -344,6 +344,7 @@ public class Personal_Info_DB_C_test {
 
 //        exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + email + "'");
 //        System.out.println(exceptedEmail);
+
         exceptedEmail = DBUtils.getListOfLists("SELECT b_email FROM tbl_mortagage WHERE b_email <> '" + email + "'");
 
 
