@@ -9,7 +9,7 @@ Feature: Database System Security for Duobank Mortgage Application
 
      Given the user is on the signup page
 
-	@sameUser
+	@smoke
   Scenario: Database can handle large number of user signups
 	When the user submits multiple signups concurrently
 	Then the signups should complete within a reasonable time frame
