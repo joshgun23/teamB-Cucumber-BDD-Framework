@@ -24,7 +24,7 @@ Feature: Database System Security for Duobank Mortgage Application
 
   @dataTableUsers
   Scenario: "tbl_users" table constraints
-	Given a user with email "{email}" which does not exist
+	Given a user with email "email" which does not exist
 	Then the user account should be created in the database
 	And the "tbl_users" table should contain the correct information
 	And the "tbl_users" table should have a unique constraint on the email column
