@@ -2,34 +2,35 @@ package utils;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.hamcrest.Matchers;
-import static org.hamcrest.Matchers.*;
+
 import java.io.File;
 import java.io.InputStream;
+
+import static io.restassured.RestAssured.requestSpecification;
+
+import static org.hamcrest.Matchers.*;
+
 public class ApiUtils {
-    private static RequestSpecification requestSpecification;
+
+
+    private  static  RequestSpecification requestSpecification;
     private static Response response;
+
+
     public static void prepareAPI() {
-        RestAssured.baseURI = ConfigReader.getProperty("BASE_URL");
+        RestAssured.baseURI = ConfigReader.getProperty("api_base_uri");
         requestSpecification = RestAssured.given();
     }
-    public static void getRequestLog() {
-        RestAssured.baseURI = ConfigReader.getProperty("BASE_URL");
-        requestSpecification = RestAssured.given();
-    }
-    public static void getResponseLog() {
-        RestAssured.baseURI = ConfigReader.getProperty("BASE_URL");
-        requestSpecification = RestAssured.given();
-    }
-    public static void setRequestQueryParameters(String key, String value){
+
+    public static void setRequestQueryParameter(String key, Object value){
         requestSpecification.
                 queryParam(key, value);
     }
-    public static void setRequestPathParameters(String key, String value){
+    public static void setRequestPathParameter(String key, Object value){
         requestSpecification.
                 pathParam(key, value);
     }
-    public static void setRequestHeaders(String key, String value){
+    public static void setRequestHeader(String key, Object value){
         requestSpecification.
                 header(key, value);
     }
@@ -58,7 +59,7 @@ public class ApiUtils {
             case "PUT" -> requestSpecification.put(endpoint);
             case "PATCH" -> requestSpecification.patch(endpoint);
             case "DELETE" -> requestSpecification.delete(endpoint);
-                default -> throw new IllegalArgumentException("Invalid Request Method");
+            default -> throw new IllegalArgumentException("Invalid Request Method");
         };
     }
     public static void displayResponseLog() {
@@ -84,7 +85,7 @@ public class ApiUtils {
             throw new RuntimeException("Response is null. Make sure the request was sent successfully before trying to verify the response time.");
         }
         long time = response.then().time(lessThan((long) milliseconds)).extract().time(); // extract response time to be displayed on the console
-        System.out.println("The response time: ” + time + ” ms");
+        System.out.println("The response time: " + time + " ms");
     }
     public static void verifyBasicResponseBody(String key, Object value) {
         if(response == null) {
@@ -98,4 +99,5 @@ public class ApiUtils {
         }
         return response;
     }
+
 }
