@@ -31,18 +31,6 @@ public class GetUser_C {
     @Test
     public void getTestNg(){
 
-//          given().log().all().
-//                  header("Content-Type","application/json").queryParam("api_key","c8a912d7d1c5a5a99c508f865b5eaae14a5b484f5bfe2d8f48c40e46289b47f3").
-//                  //queryParam("id","45").
-//          when().log().all().
-//                 get("/users").
-//
-//          then().log().all().
-//               //statusCode(200);
-//                 statusCode(equalTo(200));
-
-
-
         Response response = requestSpecification.when().log().all().
                 get("/users");
 
