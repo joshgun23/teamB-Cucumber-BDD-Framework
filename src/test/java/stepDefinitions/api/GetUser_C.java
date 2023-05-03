@@ -24,12 +24,12 @@ public class GetUser_C {
 
 
     static {
-        RestAssured.baseURI = "http://qa-duobank.us-east-2.elasticbeanstalk.com/api";
+        RestAssured.baseURI = ConfigReader.getProperty("api_base_uri");
     }
     RequestSpecification requestSpecification = given().
             header("Content-Type", "application/json").queryParam("api_key", ConfigReader.getProperty("api_key"));
     @Test
-    public void basicDemo(){
+    public void getTestNg(){
 
 //          given().log().all().
 //                  header("Content-Type","application/json").queryParam("api_key","c8a912d7d1c5a5a99c508f865b5eaae14a5b484f5bfe2d8f48c40e46289b47f3").
@@ -48,24 +48,29 @@ public class GetUser_C {
 
          response.then().log().all().
                 //statusCode(200);
-                        statusCode(equalTo(200)).time(lessThan(1000l));
+                        statusCode(equalTo(200)).
+                 time(lessThan(1000l));
 
     }
     String username = new Faker().name().username();
     String email = new Faker().internet().emailAddress();
+
+    String firstName = new Faker().name().firstName();
+
     @Test
-    public void basicDemo1(){
+    public void postTestNg(){
 
 
 
         Response response1 = requestSpecification.body("{\n" +
                 "  \"username\": \""+username+" \", \n" +
-                "  \"first_name\": \"Cool23\",\n" +
+                "  \"first_name\": \""+firstName+"\",\n" +
                 "  \"last_name\": \"Herc\",\n" +
                 "  \"email\": \""+email+"\",\n" +
                 "  \"password\": \"Dhsjjfhdsf23*\"\n" +
-                "}").when().
-                post("/user");
+                "}").
+                when().
+                       post("/user");
 
 
 
@@ -73,13 +78,31 @@ public class GetUser_C {
                 assertThat().
                 //statusCode(200);
                         statusCode(equalTo(201)).
-                body("message",is("The user has been created."));
+                body("status",is(1)).
+                body("message",is("The user has been created.")).extract().response();
+
+        Object user_id = response1.path("user_id");
+
+
+        //verify user creation
+
+         requestSpecification.queryParam("id",user_id).
+                 when().log().all().
+                 get("/user").
+                 then().log().all().
+                 assertThat().
+                 statusCode(200).
+                 body("first_name",equalTo(firstName)).
+                 body("email",equalTo(email));
+
 
     }
     @Test
-    public void basicDemoNeqativ(){
+    public void putTestNgNeqativ(){
 
-        Response response1 = requestSpecification.queryParam("id","390").body(
+        Response response1 = requestSpecification.
+                queryParam("id","390").
+                body(
                         "first_name\": \"Cool28.5\"," +
                         "  \"last_name\": \"Herc\",\n" +
                         "  \"email\": \"herc66@mail.com\"").when().
@@ -92,29 +115,37 @@ public class GetUser_C {
 
     }
     @Test
-    public void basicDemo4(){
+    public void putTestNg(){
 
         Response response1 = requestSpecification.queryParam("id","390").body(
                         "  {\n" +
                                 "  \"username\": \""+username+" \", \n" +
-                                "  \"first_name\": \"Cool23\",\n" +
+                                "  \"first_name\": \""+firstName+"\",\n" +
                                 "  \"last_name\": \"Herc\",\n" +
                                 "  \"email\": \""+email+"\",\n" +
                                 "  \"password\": \"Dhsjjfhdsf23*\"\n" +
                                 "}").when().
                 put("/user");
 
-        //"  \"username\": \"" + username + "\",\n" +
 
         response1.then().log().all().
                 assertThat().
                 //statusCode(200);
                         statusCode(equalTo(200));
 
+        requestSpecification.queryParam("id","390").
+                when().log().all().
+                get("/user").
+                then().log().all().
+                assertThat().
+                statusCode(200).
+                body("first_name",equalTo(firstName)).
+                body("email",equalTo(email));
+
     }
 
     @Test
-    public void basicDemo5Invalidormissingdata(){
+    public void patchInvalidormissingdata(){
 
         Response response1 = requestSpecification.queryParam("id","390").body(
                         "  {\n" +
@@ -130,7 +161,7 @@ public class GetUser_C {
 
     }
     @Test
-    public void basicDemo5(){
+    public void patchTestNg(){
 
         Response response1 = requestSpecification.queryParam("id","390").body(
                         "  {\n" +
@@ -145,7 +176,136 @@ public class GetUser_C {
         response1.then().log().all().
                 assertThat().
                 //statusCode(200);
-                        statusCode(equalTo(200)).body("message", is("User updated successfully"));
+                        statusCode(equalTo(200)).
+                body("message", is("User updated successfully"));
+
+    }
+    @Test
+    public void deleteUsers(){
+        Response response1 = requestSpecification.body("{\n" +
+                        "  \"username\": \""+username+" \", \n" +
+                        "  \"first_name\": \""+firstName+"\",\n" +
+                        "  \"last_name\": \"Herc\",\n" +
+                        "  \"email\": \""+email+"\",\n" +
+                        "  \"password\": \"Dhsjjfhdsf23*\"\n" +
+                        "}").
+                when().
+                post("/user");
+
+
+
+        response1.then().log().all().
+                assertThat().
+                //statusCode(200);
+                        statusCode(equalTo(201)).body("status",is(1)).
+                body("message",is("The user has been created.")).extract().response();
+
+        Object user_id = response1.path("user_id");
+
+        //delete user by id
+
+        requestSpecification.queryParam("id",user_id).
+                when().log().all().
+                delete("/user").
+                then().log().all().
+                assertThat().
+                statusCode(200).
+                body("message",is("User deleted successfully")).
+                header("content-type","application/json").time(lessThan(1000l));
+
+    }
+    @Test
+    public void userLoginJwt() {
+
+
+        Response response1 = requestSpecification.body("{\n" +
+                        "  \"email\": \"" + ConfigReader.getProperty("username") + "\",\n" +
+                        "  \"password\": \"" + ConfigReader.getProperty("password") + "\"\n" +
+                        "}").
+                when().
+                post("/login");
+
+
+        response1.then().log().all().
+                assertThat().
+                //statusCode(200);
+                        statusCode(equalTo(200)).
+                //body("status", is(1)).
+                body("message", is("You've successfully logged in!")).extract().response().path("access_token");
+
+        Object access_token = response1.path("access_token");
+
+    }
+        @Test
+        public void userLoginApplications(){
+
+
+
+            Response response1 = requestSpecification.body("{\n" +
+                            "  \"email\": \""+ConfigReader.getProperty("username")+"\",\n" +
+                            "  \"password\": \""+ConfigReader.getProperty("password")+"\"\n" +
+                            "}").
+                    when().
+                    post("/login");
+
+
+
+            response1.then().log().all().
+                    assertThat().
+                    //statusCode(200);
+                            statusCode(equalTo(200)).
+                   // body("status",is(1)).
+                    body("message",is("You've successfully logged in!")).extract().response().path("access_token");
+
+            Object access_token = response1.path("access_token");
+
+        //verify user creation
+
+        requestSpecification.header("Authorization",access_token).
+                when().log().all().
+                get("/applications").
+                then().log().all().
+                assertThat().
+                statusCode(200).
+                //body("succes",equalTo(1)).
+                time(lessThan(1000l));
+
+
+    }
+    @Test
+    public void userLoginApplicationsNegativ(){
+
+
+
+        Response response1 = requestSpecification.body("{\n" +
+                        "  \"email\": \""+ConfigReader.getProperty("username")+"\",\n" +
+                        "  \"password\": \""+ConfigReader.getProperty("password")+"\"\n" +
+                        "}").
+                when().
+                post("/login");
+
+
+
+        response1.then().log().all().
+                assertThat().
+                //statusCode(200);
+                        statusCode(equalTo(200)).
+                // body("status",is(1)).
+                        body("message",is("You've successfully logged in!")).extract().response().path("access_token");
+
+        Object access_token = response1.path("access_token");
+
+        //verify user creation
+
+        requestSpecification.header("Authorization",access_token).
+                when().log().all().
+                get("/application").
+                then().log().all().
+                assertThat().
+                statusCode(400).
+                //body("succes",equalTo(1)).
+                        time(lessThan(1000l));
+
 
     }
 }
