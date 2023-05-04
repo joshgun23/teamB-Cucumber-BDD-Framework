@@ -2,25 +2,15 @@ package stepDefinitions.api;
 
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 import org.junit.Test;
 import utils.ConfigReader;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
-
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
-public class GetUser_C {
+public class GetUser_TestNg_C {
 
 
     static {
