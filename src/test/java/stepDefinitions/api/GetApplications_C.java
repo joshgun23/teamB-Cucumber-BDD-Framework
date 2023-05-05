@@ -7,9 +7,8 @@ import utils.ApiUtils;
 import utils.ConfigReader;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class GetApplications_C {
     @Given("the {string} header is set to JWT token obtained through login endpoint")
@@ -22,38 +21,48 @@ public class GetApplications_C {
     }
 
 
-    @Then("the owner of all playlists should be correct")
+    @Then("the owner of all application should be correct")
     public void the_owner_of_all_playlists_should_be_correct() {
 
-        List<String> allOwners = ApiUtils.getResponse().path("playlists.owner");
 
-        System.out.println(allOwners);
+        Object  application = ApiUtils.getResponse().path("application_details.b_dob");
+
+        System.out.println(application);
 
         String expectedOwner = ConfigReader.getProperty("username");
-        for (String owner : allOwners) {
-            Assert.assertEquals(expectedOwner,owner);
-        }
+
+        if (application instanceof List) {
+            List<String> applicationList = (List<String>) application;
+            for (String owner : applicationList) {
+                Assert.assertEquals(expectedOwner, owner);
+            }
+        } else if (application instanceof String) {
+            String applicationString = (String) application;}
+
 
 
     }
 
-    @Then("the all playlists should be sorted in descending order")
+    @Then("the all playlists should be created_on time")
     public void the_all_playlists_should_be_sorted_in_descending_order() {
 
 
-        List<LocalDateTime> actual = ApiUtils.getResponse().path("playlists.dateCreated");
+        Object response = ApiUtils.getResponse().path("application_details.created_on");
+
+        List<LocalDateTime> actual;
+        if (response instanceof String) {
+            String dateString = (String) response;
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            actual = Collections.singletonList(LocalDateTime.parse(dateString, formatter));
+        } else {
+            actual = (List<LocalDateTime>) response;
+        }
 
         System.out.println(actual);
-
-        List<LocalDateTime> expected =  new ArrayList<>(actual);
-
+        List<LocalDateTime> expected = new ArrayList<>(actual);
         expected.sort(Comparator.reverseOrder());
-
         System.out.println(expected);
-
-        Assert.assertEquals(expected,actual);
-
-
+        Assert.assertEquals(expected, actual);
 
 
     }

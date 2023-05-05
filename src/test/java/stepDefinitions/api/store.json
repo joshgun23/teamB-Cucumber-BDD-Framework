@@ -1,0 +1,34 @@
+{
+  "success": 1,
+  "status": 200,
+  "mortagage_applications": [
+    {
+      "id": 409,
+      "b_firstName": "hj",
+      "b_lastName": "truuu",
+      "b_middleName": "",
+      "total_loan_amount": 1
+    },
+    {
+      "id": 266,
+      "b_firstName": "OnurKevin",
+      "b_lastName": "OnurKevin",
+      "b_middleName": "OnurKevin",
+      "total_loan_amount": 650000
+    },
+    {
+      "id": 265,
+      "b_firstName": "OnurKevin",
+      "b_lastName": "OnurKevin",
+      "b_middleName": "OnurKevin",
+      "total_loan_amount": 650000
+    },
+    {
+      "id": 264,
+      "b_firstName": "OnurKevin",
+      "b_lastName": "OnurKevin",
+      "b_middleName": "OnurKevin",
+      "total_loan_amount": 30000
+    }
+  ]
+}

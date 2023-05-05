@@ -1,0 +1,130 @@
+{    "name": "United States",
+  "capital": "Washington, D.C.",
+  "region": "Americas",
+  "population": 331449281,
+  "languages":
+[
+  {
+    "name": "English",
+    "nativeName": "English"
+  },
+  {
+    "name": "Spanish",
+    "nativeName": "Español"
+},
+{
+"name": "Canada",
+"capital": "Ottawa",
+"region": "Americas",
+"population": 38005238,
+"languages": [
+{
+"name": "English",
+"nativeName": "English"
+},
+{
+"name": "French",
+"nativeName": "Français"
+}
+]
+},
+{
+"name": "Brazil",
+"capital": "Brasília",
+"region": "Americas",
+"population": 213993437,
+"languages": [
+{
+"name": "Portuguese",
+"nativeName": "Português"
+}
+]
+},
+{
+"name": "United Kingdom",
+"capital": "London",
+"region": "Europe",
+"population": 68207116,
+"languages": [
+{
+"name": "English",
+"nativeName": "English"
+}
+]
+},
+{
+"name": "France",
+"capital": "Paris",
+"region": "Europe",
+"population": 67406000,
+"languages": [
+{
+"name": "French",
+"nativeName": "Français"
+}
+]
+},
+{
+"name": "Germany",
+"capital": "Berlin",
+"region": "Europe",
+"population": 83122889,
+"languages": [
+{
+"name": "German",
+"nativeName": "Deutsch"
+}
+]
+},
+{
+"name": "Russia",
+"capital": "Moscow",
+"region": "Europe",
+"population": 144463451,
+"languages": [
+{
+"name": "Russian",
+"nativeName": "Русский"
+}
+]
+},
+{
+"name": "China",
+"capital": "Beijing",
+"region": "Asia",
+"population": 1403500365,
+"languages": [
+{
+"name": "Chinese",
+"nativeName": "中文 (Zhōngwén)"
+}
+]
+},
+{
+"name": "India",
+"capital": "New Delhi",
+"region": "Asia",
+"population": 1394656272,
+"languages": [
+{
+"name": "Hindi",
+"nativeName": "हिन्दी"
+},
+{
+"name": "English",
+"nativeName": "English"
+}
+]
+},
+{
+"name": "Japan",
+"capital": "Tokyo",
+"region": "Asia",
+"population": 125950000,
+"languages": [
+{
+"name": "Japanese",
+"nativeName": "日本語 (にほんご)"
+}
+]
+}

@@ -1,5 +1,5 @@
 @api
-Feature: GET /applications API endpoint
+Feature: GET /application API endpoint
 
   As an admin
   I want to retrieve all the users of the mortgage application
@@ -16,12 +16,12 @@ Feature: GET /applications API endpoint
 
     Given the request is authenticated with a valid API key
     And the "Authorization" header is set to JWT token obtained through login endpoint
-    When I send a "GET" request to the endpoint "/applications"
+    And the "id" query parameter is set to "265"
+    When I send a "GET" request to the endpoint "/application"
     Then the response log should be displayed
     Then the response status code should be 200
     And the response "Content-Type" header should be "application/json; charset=UTF-8"
     And the response time should be less than 850 ms
-
-
-
+    And the owner of all application should be correct
+    And the all playlists should be created_on time
 
