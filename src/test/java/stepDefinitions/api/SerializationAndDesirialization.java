@@ -2,6 +2,7 @@ package stepDefinitions.api;
 
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
+import io.restassured.common.mapper.TypeRef;
 import org.junit.Test;
 import stepDefinitions.pojos.TeamB_User;
 import utils.ConfigReader;
@@ -159,5 +160,43 @@ public class SerializationAndDesirialization {
                 statusCode(200);
 
     }
+    @Test
+    public void deSerializeUsingString(){
+        String response = given().
+                queryParam("id", 390).
+                queryParam("api_key", ConfigReader.getProperty("api_key")).
+                when().log().all().
+                get("/user").
+                then().log().all().
+                assertThat().
+                statusCode(200).extract().asPrettyString();
 
+        System.out.println(response);
+    }
+
+    @Test
+    public void deSerializeUsingMap(){
+
+        Map<String, String> map = given().
+                queryParam("id", 391).
+                queryParam("api_key", ConfigReader.getProperty("api_key")).
+                when().log().all().
+                get("/user").
+                then().log().all().
+                assertThat().
+                statusCode(200).extract().as(new TypeRef<Map<String, String>>() {
+                });
+    }
+    @Test
+    public void deSerializeUsingList() {
+        List<Map<String, String>> listOfUsers = given().
+                queryParam("api_key", ConfigReader.getProperty("api_key")).
+                when().log().all().
+                get("/users").
+                then().log().all().
+                assertThat().
+                statusCode(200).extract().as(new TypeRef<List<Map<String, String>>>() {
+                });
+
+    }
 }
