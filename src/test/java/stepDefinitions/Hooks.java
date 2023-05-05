@@ -54,7 +54,13 @@ public class Hooks {
         ApiUtils.prepareAPI();
     }
 
+    @After ("@api")
+    public void tearDownScenarioForApiTests(Scenario scenario){
 
+        if(scenario.isFailed()){
+            scenario.attach( ApiUtils.getResponse().asPrettyString(), "text/plain", "responseBody");
+        }
+    }
 
     @Before ("@DB") // runs before each scenario tagged with @UI
     public void setUpScenarioForDbTests(){
